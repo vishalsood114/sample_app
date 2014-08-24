@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://www.railstutorial.org/book/rails_flavored_ruby -->
+<html id="custDomain"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/6713.js" async="" type="text/javascript"></script><script async="" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"1310fd97f1","applicationID":"4014257","transactionName":"IVZWR0tbWF4BFxhWVw1SSxxaQUdGCwhoRl0DXQ==","queueTime":11,"applicationTime":173,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o?o:n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({D5DuLP:[function(t,n){function e(t,n){var e=r[t];return e?e.apply(this,n):(o[t]||(o[t]=[]),void o[t].push(n))}var r={},o={};n.exports=e,e.queues=o,e.handlers=r},{}],handle:[function(t,n){n.exports=t("D5DuLP")},{}],G9z0Bl:[function(t,n){function e(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&p&&p.body){l.proto="https"===f.split(":")[0]||t.sslForHttp?"https://":"http://",i("mark",["onload",a()]);var n=p.createElement("script");n.src=l.proto+t.agent,p.body.appendChild(n)}}function r(){"complete"===p.readyState&&o()}function o(){i("mark",["domContent",a()])}function a(){return(new Date).getTime()}var i=t("handle"),u=window,p=u.document,s="addEventListener",c="attachEvent",f=(""+location).split("?")[0],l=n.exports={offset:a(),origin:f,features:[]};p[s]?(p[s]("DOMContentLoaded",o,!1),u[s]("load",e,!1)):(p[c]("onreadystatechange",r),u[c]("onload",e)),i("mark",["firstbyte",a()])},{handle:"D5DuLP"}],loader:[function(t,n){n.exports=t("G9z0Bl")},{}]},{},["G9z0Bl"]);</script>
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/1197428788.js" type="text/javascript"></script>
+
+<title>Chapter 4: Rails-flavored Ruby
+ | Ruby on Rails Tutorial | Softcover.io</title>
+<meta charset="UTF-8">
+<script>
+  window.Config = {
+    bucket: "softcover",
+    previewBucket: "softcover-cloud"
+  }
+</script>
+<link href="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/reading-21203e3c6ce87f65cdd3cc2208be8211.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/print-ca85c1c74168e935ca4e2e958a3a5c2b.css" media="print" rel="stylesheet" type="text/css">
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/jquery-2.0.3.min.js" type="text/javascript"></script>
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/jquery.formalize.min.js" type="text/javascript"></script>
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/underscore-min.js" type="text/javascript"></script>
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/saved_resource" type="text/javascript"></script>
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/application-5c07e41ef362871e155021c6f210bd90.js" type="text/javascript"></script>
+<meta content="authenticity_token" name="csrf-param">
+<meta content="fU6fZ88BXiVjpEskuGLy2itxgWgwMo0t3xCadS6gK98=" name="csrf-token">
+<link href="http://www.railstutorial.org/apple-touch-icon-precomposed.png" rel="apple-touch-icon-precomposed">
+<link href="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/css" rel="stylesheet" type="text/css">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/jsapi" type="text/javascript"></script>
+<script>
+  // test key only
+  // this identifies your website in the createToken call below
+  Stripe.setPublishableKey('pk_live_Xn1p0BfxqKxkAxtEr03P7wmd');
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('require', 'linker');
+  ga('linker:autoLink', ['www.railstutorial.org', 'softcover.io']);
+
+  ga('create', 'UA-46858978-1', 'softcover.io', {'allowLinker': true});
+  ga('send', 'pageview');
+
+  ga('create', 'UA-8667566-1', 'auto', {
+    'name': 'book',
+    'allowLinker': true
+  });
+
+  ga('book.send', 'pageview');
+
+</script>
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/custom_domain_js.js" type="text/javascript"></script>
+<style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -90px !important;
+    width: 180px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script id="mathJaxJS" type="text/javascript" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/MathJax.js"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+<body><div id="MathJax_Message" style="display: none;"></div><div id="MathJax_Message" style="display: none;"></div><div id="MathJax_Message" style="display: none;"></div><div id="MathJax_Message" style="display: none;"></div><div id="MathJax_Message" style="display: none;"></div><div id="MathJax_Message" style="display: none;"></div>
+<div class="container closeLeft">
+<div class="container_footer">
+<div id="header">
+<div class="wrapper">
+<a href="http://www.railstutorial.org/" class="logo"><img alt="Logo" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/logo-e741419bc04d21db7e60ddc10883b4f9.png">
+</a><a href="javascript://" id="mobileMenu"><div class="closedMenu">
+≡
+<span>Menu</span>
+</div>
+<div class="openMenu">
+x
+<span>Close</span>
+</div>
+</a><div class="j_userHeader closeLeft" style="display:inline"><ul class="headerMenu">
+<li><a href="http://www.softcover.io/login">Log In</a></li>
+<li><a href="http://www.softcover.io/account/sign_up">Sign Up</a></li>
+</ul>
+</div>
+<div id="dropBG" style="display: none;"></div>
+<div class="clear"></div>
+</div>
+</div>
+
+<div id="pageBook">
+<div id="bookHeader">
+<div class="wrapper">
+<div class="bookCover">
+<a href="http://www.railstutorial.org/book"><img alt="Cover-web" class="cover" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/cover-web.png">
+<img alt="Cover_bg" class="coverBG" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/cover_bg-88b6816f72bba1e853bbfcd1caff472a.png">
+<p>
+<i class="ibooksMedia iRead"></i>
+READ ONLINE FREE
+</p>
+</a></div>
+<div class="bookInfo">
+<h1>
+Ruby on Rails Tutorial
+<span class="j_subtitle">Learn Rails by Example</span>
+<strong>Michael Hartl</strong>
+</h1>
+<p class="j_description">
+ The Ruby on Rails Tutorial book and screencast series teach you how to develop and deploy real, industrial-strength web applications with Ruby on Rails, the open-source web framework that powers top websites such as Twitter, Hulu, GitHub, and the Yellow Pages. The Ruby on Rails Tutorial book is available for free online and is available for purchase as an ebook (PDF, EPUB, and MOBI formats). The companion screencast series includes 15 individual lessons (including a new Rails 4.0 supplement) totaling more than 15 hours, with one lesson for each chapter of the Ruby on Rails Tutorial book. The best value is the ebook/screencast bundle, which includes the 2nd edition book, the Rails 4.0–compatible version, the 2nd edition screencast series, and the Rails 4.0 supplementary screencasts. 
+</p>
+
+<div class="bookControls">
+<a href="http://www.railstutorial.org/"><button class="transBG">Book Info</button>
+</a><a href="mailto:admin@railstutorial.org"><button class="transBG">Contact Author</button>
+</a></div>
+
+</div>
+
+</div>
+</div>
+
+<div id="bookMenu" class="bookMenuFixed">
+<div class="wrapper">
+<div class="bookMenuControls">
+<div class="bookMenuArows">
+<a href="javascript://" class="leftArrow">◄</a>
+<a href="javascript://" class="upArrow">▲</a>
+<a href="javascript://" class="rightArrow">►</a>
+</div>
+<div class="bookMenuSize">
+<a href="javascript://" class="current" id="sizeRegular"></a>
+<a href="javascript://" id="sizeBig"></a>
+<a href="javascript://" id="sizeBigger"></a>
+</div>
+<div class="bookMenuSearch">
+<a href="javascript://" id="j_singlePage"><i class="fa fa-search"></i>
+Single Page
+</a></div>
+</div>
+<div class="dropDown" id="j_chapterDropDown">
+<span id="chapterTitle">Chapter 4: Rails-flavored Ruby
+</span>
+<ul class="dropMenu"><li><a>Frontmatter
+</a></li><li><a>Chapter 1: From zero to deploy
+</a></li><li><a>Chapter 2: A demo app
+</a></li><li><a>Chapter 3: Mostly static pages
+</a></li><li><a>Chapter 4: Rails-flavored Ruby
+</a></li><li><a>Chapter 5: Filling in the layout
+</a></li><li><a>Chapter 6: Modeling users
+</a></li><li><a>Chapter 7: Sign up
+</a></li><li><a>Chapter 8: Sign in, sign out
+</a></li><li><a>Chapter 9: Updating, showing, and deleting users
+</a></li><li><a>Chapter 10: User microposts
+</a></li><li><a>Chapter 11: Following users
+</a></li></ul>
+</div>
+<div class="bookMenuActions j_downloadLinks"><a href="" onclick="$(&#39;#bookMenuEmail&#39;).toggleClass(&#39;open&#39;); return false"><button class="greyButton iEmailUpdate">❤</button>
+</a><a href="http://www.railstutorial.org/#pricing" class="buttonStyle attention">Buy Now</a>
+<a href="http://www.softcover.io/downloads/28fdb94f/ruby_on_rails_tutorial"><button>Download Previews</button>
+</a></div>
+</div>
+<div class="animated" id="bookMenuEmail">
+<div class="wrapper">
+<label>Follow this book to receive email updates from the author.</label>
+<div class="j_followBookForm"><form accept-charset="UTF-8" action="http://www.softcover.io/follow/28fdb94f/ruby_on_rails_tutorial" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+<input name="email" placeholder="YOUR EMAIL ADDRESS" type="text">
+<input class="greyButton optClick_follow" type="submit" value="Follow Book">
+</form>
+
+</div>
+</div>
+</div>
+</div>
+<div class="wrapper" id="bookWr">
+<div class="bookChapterTop">Chapter 4: Rails-flavored Ruby
+</div>
+<div id="bookHtml" style="opacity: 1;"><div id="book"><div id="_cha-rails_flavored_ruby" data-tralics-id="cid19" class="chapter" data-number="4" data-chapter="rails_flavored_ruby"><h1><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-rails_flavored_ruby" class="heading hyperref"><span class="number">Chapter 4 </span>Rails-flavored Ruby</a></h1>
+<p>Grounded in examples from <a href="http://www.railstutorial.org/book/static_pages#cha-static_pages" class="hyperref">Chapter&nbsp;<span class="ref">3</span></a>, this chapter explores some elements of Ruby important for Rails.<span class="intersentencespace"></span> Ruby is a big language, but fortunately the subset needed to be productive as a Rails developer is relatively small.<span class="intersentencespace"></span> Moreover, this subset is <em>different</em> from the usual approaches to learning Ruby, which is why, if your goal is making dynamic web applications, I recommend learning Rails first, picking up bits of Ruby along the way.<span class="intersentencespace"></span> To become a Rails <em>expert</em>, you need to understand Ruby more deeply, and this book gives you a good foundation for developing that expertise.<span class="intersentencespace"></span> As noted in <a href="http://www.railstutorial.org/book/beginning#sec-comments_for_various_readers" class="hyperref">Section&nbsp;<span class="ref">1.1.1</span></a>, after finishing the <em>Rails Tutorial</em> I suggest reading a pure Ruby book such as <a href="http://www.amazon.com/gp/product/1430223634"><em>Beginning Ruby</em></a>, <a href="http://www.amazon.com/gp/product/1933988657"><em>The Well-Grounded Rubyist</em></a>, or <a href="http://www.amazon.com/gp/product/0672328844"><em>The Ruby Way</em></a>.</p>
+<p>This chapter covers a lot of material, and it’s OK not to get it all on the first pass.<span class="intersentencespace"></span> I’ll refer back to it frequently in future chapters.</p>
+</div><div id="_sec-motivation" data-tralics-id="cid20" class="section" data-number="4.1"><h2><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-motivation" class="heading hyperref"><span class="number">4.1 </span>Motivation</a></h2>
+<p>As we saw in the last chapter, it’s possible to develop the skeleton of a Rails application, and even start testing it, with essentially no knowledge of the underlying Ruby language.<span class="intersentencespace"></span> We did this by relying on the test code provided by the tutorial and addressing each error message until the test suite was passing.<span class="intersentencespace"></span> This situation can’t last forever, though, and we’ll open this chapter with an addition to the site that brings us face-to-face with our Ruby limitations.</p>
+<p>When we last saw our new application, we had just updated our mostly static pages to use Rails layouts to eliminate duplication in our views, as shown in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-application_layout_redux" class="hyperref">Listing&nbsp;<span class="ref">4.1</span></a> (which is a slightly reformatted version of <a href="http://www.railstutorial.org/book/static_pages#code-application_layout" class="hyperref">Listing&nbsp;<span class="ref">3.26</span></a>).</p>
+<div class="codelisting" id="_code-application_layout_redux" data-tralics-id="uid283" data-number="4.1"><div class="heading"><span class="number">Listing 4.1:</span> 
+
+<span class="description">The sample application site layout.<span class="intersentencespace"></span> <span class="break"></span> <span class="filepath">app/views/layouts/application.html.erb</span></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Ruby on Rails Tutorial Sample App | <span class="cp">&lt;%=</span> <span class="k">yield</span><span class="p">(</span><span class="ss">:title</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="nt">&lt;/title&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                           <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="cp">%&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="cp">%&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">csrf_meta_tags</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div></div></div><p>Let’s focus on one particular line in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-application_layout_redux" class="hyperref">Listing&nbsp;<span class="ref">4.1</span></a>:</p>
+<div class="code"><div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                       <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="cp">%&gt;</span>
+</pre></div></div>
+<p>This uses the built-in Rails function <code>stylesheet_link_tag</code> (which you can read more about at the <a href="http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html#method-i-stylesheet_link_tag">Rails API</a>) to include <code>application.css</code> for all <a href="http://www.w3.org/TR/CSS2/media.html">media types</a> (including computer screens and printers).<span class="intersentencespace"></span> To an experienced Rails developer, this line looks simple, but there are at least four potentially confusing Ruby ideas: built-in Rails methods, method invocation with missing parentheses, symbols, and hashes.<span class="intersentencespace"></span> We’ll cover all of these ideas in this chapter.</p>
+<p>In addition to coming equipped with a large number of built-in functions for use in the views, Rails also allows the creation of new ones.<span class="intersentencespace"></span> Such functions are called <em>helpers</em>; to see how to make a custom helper, let’s start by examining the title line from <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-application_layout_redux" class="hyperref">Listing&nbsp;<span class="ref">4.1</span></a>:</p>
+<div class="code"><div class="highlight"><pre>Ruby on Rails Tutorial Sample App | <span class="cp">&lt;%=</span> <span class="k">yield</span><span class="p">(</span><span class="ss">:title</span><span class="p">)</span> <span class="cp">%&gt;</span>
+</pre></div></div>
+<p>This relies on the definition of a page title (using <code>provide</code>) in each view, as in</p>
+<div class="code"><div class="highlight"><pre><span class="cp">&lt;%</span> <span class="n">provide</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="s1">'Home'</span><span class="p">)</span> <span class="cp">%&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Sample App<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  This is the home page for the
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://railstutorial.org/"</span><span class="nt">&gt;</span>Ruby on Rails Tutorial<span class="nt">&lt;/a&gt;</span>
+  sample application.
+<span class="nt">&lt;/p&gt;</span>
+</pre></div></div>
+<p>But what if we don’t provide a title?<span class="intersentencespace"></span> It’s a good convention to have a <em>base title</em> we use on every page, with an optional page title if we want to be more specific.<span class="intersentencespace"></span> We’ve <em>almost</em> achieved that with our current layout, with one wrinkle: as you can see if you delete the <code>provide</code> call in one of the views, in the absence of a page-specific title the full title appears as follows:</p>
+<div class="code"><div class="highlight"><pre>Ruby on Rails Tutorial Sample App |
+</pre></div></div>
+<p>In other words, there’s a suitable base title, but there’s also a trailing vertical bar character <code>|</code> at the end.</p>
+<p>To solve the problem of a missing page title, we’ll define a custom helper called <code>full_title</code>.<span class="intersentencespace"></span> The <code>full_title</code> helper returns a base title, “Ruby on Rails Tutorial Sample App”, if no page title is defined, and adds a vertical bar followed by the page title if one is defined (<a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-title_helper" class="hyperref">Listing&nbsp;<span class="ref">4.2</span></a>).<sup id="_cha-4_footnote-ref-1" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-1">1</a></sup></p>
+<div class="codelisting" id="_code-title_helper" data-tralics-id="uid285" data-number="4.2"><div class="heading"><span class="number">Listing 4.2:</span> 
+
+<span class="description">Defining a <code>full_title</code> helper.<span class="intersentencespace"></span> <span class="break"></span> <span class="filepath">app/helpers/application_helper.rb</span></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="k">module</span> <span class="nn">ApplicationHelper</span>
+
+  <span class="c1"># Returns the full title on a per-page basis.</span>
+  <span class="k">def</span> <span class="nf">full_title</span><span class="p">(</span><span class="n">page_title</span><span class="p">)</span>
+    <span class="n">base_title</span> <span class="o">=</span> <span class="s2">"Ruby on Rails Tutorial Sample App"</span>
+    <span class="k">if</span> <span class="n">page_title</span><span class="o">.</span><span class="n">empty?</span>
+      <span class="n">base_title</span>
+    <span class="k">else</span>
+      <span class="s2">"</span><span class="si">#{</span><span class="n">base_title</span><span class="si">}</span><span class="s2"> | </span><span class="si">#{</span><span class="n">page_title</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div></div></div><p>Now that we have a helper, we can use it to simplify our layout by replacing</p>
+<div class="code"><div class="highlight"><pre><span class="nt">&lt;title&gt;</span>Ruby on Rails Tutorial Sample App | <span class="cp">&lt;%=</span> <span class="k">yield</span><span class="p">(</span><span class="ss">:title</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="nt">&lt;/title&gt;</span>
+</pre></div></div>
+<p>with</p>
+<div class="code"><div class="highlight"><pre><span class="nt">&lt;title&gt;</span><span class="cp">&lt;%=</span> <span class="n">full_title</span><span class="p">(</span><span class="k">yield</span><span class="p">(</span><span class="ss">:title</span><span class="p">))</span> <span class="cp">%&gt;</span><span class="nt">&lt;/title&gt;</span>
+</pre></div></div>
+<p>as seen in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-application_layout_full_title" class="hyperref">Listing&nbsp;<span class="ref">4.3</span></a>.</p>
+<div class="codelisting" id="_code-application_layout_full_title" data-tralics-id="uid286" data-number="4.3"><div class="heading"><span class="number">Listing 4.3:</span> 
+
+<span class="description">The sample application site layout.<span class="intersentencespace"></span> <span class="break"></span> <span class="filepath">app/views/layouts/application.html.erb</span></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span><span class="cp">&lt;%=</span> <span class="n">full_title</span><span class="p">(</span><span class="k">yield</span><span class="p">(</span><span class="ss">:title</span><span class="p">))</span> <span class="cp">%&gt;</span><span class="nt">&lt;/title&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                           <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="cp">%&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="cp">%&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="n">csrf_meta_tags</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="cp">%&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div></div></div><p>To put our helper to work, we can eliminate the unnecessary word “Home” from the Home page, allowing it to revert to the base title.<span class="intersentencespace"></span> We do this by first updating our test with the code in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-home_base_title_spec" class="hyperref">Listing&nbsp;<span class="ref">4.4</span></a>, which updates the previous title test and adds one to test for the absence of the custom <code>’Home’</code> string in the title.<span class="intersentencespace"></span> (<em>Note</em>: If you completed the exercise corresponding to <a href="http://www.railstutorial.org/book/static_pages#code-pages_controller_spec_exercise" class="hyperref">Listing&nbsp;<span class="ref">3.31</span></a>, you should retain the <code>let</code> statement defining the <code>base_title</code> in the first <code>describe</code> block.)</p>
+<div class="codelisting" id="_code-home_base_title_spec" data-tralics-id="uid287" data-number="4.4"><div class="heading"><span class="number">Listing 4.4:</span> 
+
+<span class="description">Updated tests for the Home page’s title.<span class="intersentencespace"></span> <span class="break"></span> <span class="filepath">spec/requests/static_pages_spec.rb</span></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+
+<span class="n">describe</span> <span class="s2">"Static pages"</span> <span class="k">do</span>
+
+  <span class="n">describe</span> <span class="s2">"Home page"</span> <span class="k">do</span>
+
+    <span class="n">it</span> <span class="s2">"should have the content 'Sample App'"</span> <span class="k">do</span>
+      <span class="n">visit</span> <span class="s1">'/static_pages/home'</span>
+      <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_content</span><span class="p">(</span><span class="s1">'Sample App'</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s2">"should have the base title"</span> <span class="k">do</span>
+      <span class="n">visit</span> <span class="s1">'/static_pages/home'</span>
+      <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">have_title</span><span class="p">(</span><span class="s2">"Ruby on Rails Tutorial Sample App"</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s2">"should not have a custom page title"</span> <span class="k">do</span>
+      <span class="n">visit</span> <span class="s1">'/static_pages/home'</span>
+      <span class="n">expect</span><span class="p">(</span><span class="n">page</span><span class="p">)</span><span class="o">.</span><span class="n">not_to</span> <span class="n">have_title</span><span class="p">(</span><span class="s1">'| Home'</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="o">.</span>
+  <span class="o">.</span>
+  <span class="o">.</span>
+<span class="k">end</span>
+</pre></div></div></div><p>See if you can figure out why we’ve added a new test instead of just altering the current one.<span class="intersentencespace"></span> (<em>Hint</em>: The answer is in <a href="http://www.railstutorial.org/book/static_pages#sec-testing_a_title_change" class="hyperref">Section&nbsp;<span class="ref">3.3.1</span></a>.)</p>
+<p>Let’s run the test suite to verify that one test fails:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">$</span> bundle <span class="nb">exec </span>rspec spec/requests/static_pages_spec.rb
+</pre></div></div>
+<p>To get the test suite to pass, we’ll remove the <code>provide</code> line from the Home page’s view, as seen in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-home_page_base_title" class="hyperref">Listing&nbsp;<span class="ref">4.5</span></a>.</p>
+<div class="codelisting" id="_code-home_page_base_title" data-tralics-id="uid288" data-number="4.5"><div class="heading"><span class="number">Listing 4.5:</span> 
+
+<span class="description">The Home page with no custom page title.<span class="intersentencespace"></span> <span class="break"></span> <span class="filepath">app/views/static_pages/home.html.erb</span></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>Sample App<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  This is the home page for the
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://railstutorial.org/"</span><span class="nt">&gt;</span>Ruby on Rails Tutorial<span class="nt">&lt;/a&gt;</span>
+  sample application.
+<span class="nt">&lt;/p&gt;</span>
+</pre></div></div></div><p>At this point the tests should pass:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">$</span> bundle <span class="nb">exec </span>rspec spec/requests/static_pages_spec.rb
+</pre></div></div>
+<p>As with the line to include the application stylesheet, the code in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-title_helper" class="hyperref">Listing&nbsp;<span class="ref">4.2</span></a> may look simple to the eyes of an experienced Rails developer, but it’s <em>full</em> of potentially confusing Ruby ideas: modules, comments, local variable assignment, booleans, control flow, string interpolation, and return values.<span class="intersentencespace"></span> This chapter will cover all of these ideas as well.</p>
+</div><div id="_sec-strings_and_methods" data-tralics-id="cid21" class="section" data-number="4.2"><h2><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-strings_and_methods" class="heading hyperref"><span class="number">4.2 </span>Strings and methods</a></h2>
+<p>Our principal tool for learning Ruby will be the <em>Rails console</em>, a command-line tool for interacting with Rails applications first seen in <a href="http://www.railstutorial.org/book/demo_app#sec-demo_user_has_many_microposts" class="hyperref">Section&nbsp;<span class="ref">2.3.3</span></a>.<span class="intersentencespace"></span> The console itself is built on top of interactive Ruby (<code>irb</code>), and thus has access to the full power of the Ruby language.<span class="intersentencespace"></span> (As we’ll see in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-a_controller_class" class="hyperref">Section&nbsp;<span class="ref">4.4.4</span></a>, the console also has access to the Rails environment.)<span class="intersentencespace"></span> Start the console at the command line as follows:</p>
+<div class="code"><div class="highlight"><pre><span class="go">$ rails console</span>
+<span class="go">Loading development environment</span>
+<span class="go">&gt;&gt;</span>
+</pre></div></div>
+<p>By default, the console starts in a <em>development environment</em>, which is one of three separate environments defined by Rails (the others are <em>test</em> and <em>production</em>).<span class="intersentencespace"></span> This distinction won’t be important in this chapter, but we’ll learn more about environments in <a href="http://www.railstutorial.org/book/sign_up#sec-rails_environments" class="hyperref">Section&nbsp;<span class="ref">7.1.1</span></a>.</p>
+<p>The console is a great learning tool, and you should feel free to explore—don’t worry, you (probably) won’t break anything.<span class="intersentencespace"></span> When using the console, type Ctrl-C if you get stuck, or Ctrl-D to exit the console altogether.<span class="intersentencespace"></span> Throughout the rest of this chapter, you might find it helpful to consult the <a href="http://ruby-doc.org/core-2.0/">Ruby API</a>.<span class="intersentencespace"></span> It’s packed (perhaps even <em>too</em> packed) with information; for example, to learn more about Ruby strings you can look at the Ruby API entry for the <code>String</code> class.</p>
+<div id="_sec-comments" data-tralics-id="uid289" class="subsection" data-number="4.2.1"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-comments" class="heading hyperref"><span class="number">4.2.1 </span>Comments</a></h3>
+<p>Ruby <em>comments</em> start with the pound sign&nbsp;<code>#</code> (also called the “hash mark” or, more poetically, the “octothorpe”) and extend to the end of the line.<span class="intersentencespace"></span> Ruby ignores comments, but they are useful for human readers (including, often, the original author!).<span class="intersentencespace"></span> In the code</p>
+<div class="code"><div class="highlight"><pre>  <span class="c1"># Returns the full title on a per-page basis.</span>
+  <span class="k">def</span> <span class="nf">full_title</span><span class="p">(</span><span class="n">page_title</span><span class="p">)</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+  <span class="k">end</span>
+</pre></div></div>
+<p>the first line is a comment indicating the purpose of the subsequent function definition.</p>
+<p>You don’t ordinarily include comments in console sessions, but for instructional purposes I’ll include some comments in what follows, like this:</p>
+<div class="code"><div class="highlight"><pre><span class="go">$ rails console</span>
+<span class="gp">&gt;&gt; </span><span class="mi">17</span> <span class="o">+</span> <span class="mi">42</span>   <span class="c1"># Integer addition</span>
+<span class="go">=&gt; 59</span>
+</pre></div></div>
+<p>If you follow along in this section typing or copying-and-pasting commands into your own console, you can of course omit the comments if you like; the console will ignore them in any case.</p>
+</div>
+<div id="_sec-strings" data-tralics-id="uid290" class="subsection" data-number="4.2.2"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-strings" class="heading hyperref"><span class="number">4.2.2 </span>Strings</a></h3>
+<p><em>Strings</em> are probably the most important data structure for web applications, since web pages ultimately consist of strings of characters sent from the server to the browser.<span class="intersentencespace"></span> Let’s start exploring strings with the console, this time started with <code>rails&nbsp;c</code>, which is a shortcut for <code>rails console</code>:</p>
+<div class="code"><div class="highlight"><pre><span class="go">$ rails c</span>
+<span class="gp">&gt;&gt; </span><span class="s2">""</span>         <span class="c1"># An empty string</span>
+<span class="go">=&gt; ""</span>
+<span class="gp">&gt;&gt; </span><span class="s2">"foo"</span>      <span class="c1"># A nonempty string</span>
+<span class="go">=&gt; "foo"</span>
+</pre></div></div>
+<p>These are <em>string literals</em> (also, amusingly, called <em>literal strings</em>), created using the double quote character&nbsp;<code>"</code>.<span class="intersentencespace"></span> The console prints the result of evaluating each line, which in the case of a string literal is just the string itself.</p>
+<p>We can also concatenate strings with the <code>+</code> operator:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s2">"foo"</span> <span class="o">+</span> <span class="s2">"bar"</span>    <span class="c1"># String concatenation</span>
+<span class="go">=&gt; "foobar"</span>
+</pre></div></div>
+<p>Here the result of evaluating <code>"foo"</code> plus <code>"bar"</code> is the string <code>"foobar"</code>.<sup id="_cha-4_footnote-ref-2" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-2">2</a></sup></p>
+<p>Another way to build up strings is via <em>interpolation</em> using the special syntax <code>#{}</code>:<sup id="_cha-4_footnote-ref-3" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-3">3</a></sup></p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">"Michael"</span>    <span class="c1"># Variable assignment</span>
+<span class="go">=&gt; "Michael"</span>
+<span class="gp">&gt;&gt; </span><span class="s2">"</span><span class="si">#{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> Hartl"</span>     <span class="c1"># String interpolation</span>
+<span class="go">=&gt; "Michael Hartl"</span>
+</pre></div></div>
+<p>Here we’ve <em>assigned</em> the value <code>"Michael"</code> to the variable <code>first_name</code> and then interpolated it into the string <code>"#{first_name} Hartl"</code>.<span class="intersentencespace"></span> We could also assign both strings a variable name:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">"Michael"</span>
+<span class="go">=&gt; "Michael"</span>
+<span class="gp">&gt;&gt; </span><span class="n">last_name</span> <span class="o">=</span> <span class="s2">"Hartl"</span>
+<span class="go">=&gt; "Hartl"</span>
+<span class="gp">&gt;&gt; </span><span class="n">first_name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="n">last_name</span>    <span class="c1"># Concatenation, with a space in between</span>
+<span class="go">=&gt; "Michael Hartl"</span>
+<span class="gp">&gt;&gt; </span><span class="s2">"</span><span class="si">#{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">"</span>    <span class="c1"># The equivalent interpolation</span>
+<span class="go">=&gt; "Michael Hartl"</span>
+</pre></div></div>
+<p>Note that the final two expressions are equivalent, but I prefer the interpolated version; having to add the single space <code>"&nbsp;"</code> seems a bit awkward.</p>
+<div id="_sec-printing" data-tralics-id="uid293" class="subsubsection" data-number="4.2.2.1"><h4><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-printing" class="heading">Printing</a></h4>
+<p>To <em>print</em> a string, the most commonly used Ruby function is <code>puts</code> (pronounced “put ess”, for “put string”):</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="s2">"foo"</span>     <span class="c1"># put string</span>
+<span class="go">foo</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div>
+<p>The <code>puts</code> method operates as a <em>side-effect</em>: the expression <code>puts "foo"</code> prints the string to the screen and then returns <a href="http://www.answers.com/nil">literally nothing</a>: <code>nil</code> is a special Ruby value for “nothing at all”.<span class="intersentencespace"></span> (In what follows, I’ll sometimes suppress the <code>=&gt; nil</code> part for simplicity.)</p>
+<p>Using <code>puts</code> automatically appends a newline character&nbsp;<span class="inline_verbatim">\n</span> to the output; the related <code>print</code> method does not:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="nb">print</span> <span class="s2">"foo"</span>    <span class="c1"># print string (same as puts, but without the newline)</span>
+<span class="go">foo=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="nb">print</span> <span class="s2">"foo</span><span class="se">\n</span><span class="s2">"</span>  <span class="c1"># Same as puts "foo"</span>
+<span class="go">foo</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div>
+</div>
+<div id="_sec-single_quoted_strings" data-tralics-id="uid294" class="subsubsection" data-number="4.2.2.2"><h4><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-single_quoted_strings" class="heading">Single-quoted strings</a></h4>
+<p>All the examples so far have used <em>double-quoted strings</em>, but Ruby also supports <em>single-quoted</em> strings.<span class="intersentencespace"></span> For many uses, the two types of strings are effectively identical:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s1">'foo'</span>          <span class="c1"># A single-quoted string</span>
+<span class="go">=&gt; "foo"</span>
+<span class="gp">&gt;&gt; </span><span class="s1">'foo'</span> <span class="o">+</span> <span class="s1">'bar'</span>
+<span class="go">=&gt; "foobar"</span>
+</pre></div></div>
+<p>There’s an important difference, though; Ruby won’t interpolate into single-quoted strings:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s1">'#{foo} bar'</span>     <span class="c1"># Single-quoted strings don't allow interpolation</span>
+<span class="go">=&gt; "\#{foo} bar"</span>
+</pre></div></div>
+<p>Note how the console returns values using double-quoted strings, which requires a backslash to <em>escape</em> special characters such as&nbsp;<code>#</code>.</p>
+<p>If double-quoted strings can do everything that single-quoted strings can do, and interpolate to boot, what’s the point of single-quoted strings?<span class="intersentencespace"></span> They are often useful because they are truly literal, and contain exactly the characters you type.<span class="intersentencespace"></span> For example, the “backslash” character is special on most systems, as in the literal newline&nbsp;<span class="inline_verbatim">\n</span>.<span class="intersentencespace"></span> If you want a variable to contain a literal backslash, single quotes make it easier:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s1">'\n'</span>       <span class="c1"># A literal 'backslash n' combination</span>
+<span class="go">=&gt; "\\n"</span>
+</pre></div></div>
+<p>As with the&nbsp;<code>#</code> character in our previous example, Ruby needs to escape the backslash with an additional backslash; inside double-quoted strings, a literal backslash is represented with <em>two</em> backslashes.<span class="intersentencespace"></span> For a small example like this, there’s not much savings, but if there are lots of things to escape it can be a real help:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s1">'Newlines (\n) and tabs (\t) both use the backslash character \.'</span>
+<span class="go">=&gt; "Newlines (\\n) and tabs (\\t) both use the backslash character \\."</span>
+</pre></div></div>
+</div></div>
+<div id="_sec-objects_and_message_passing" data-tralics-id="uid295" class="subsection" data-number="4.2.3"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-objects_and_message_passing" class="heading hyperref"><span class="number">4.2.3 </span>Objects and message passing</a></h3>
+<p>Everything in Ruby, including strings and even <code>nil</code>, is an <em>object</em>.<span class="intersentencespace"></span> We’ll see the technical meaning of this in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-a_class_of_our_own" class="hyperref">Section&nbsp;<span class="ref">4.4.2</span></a>, but I don’t think anyone ever understood objects by reading the definition in a book; you have to build up your intuition for objects by seeing lots of examples.</p>
+<p>It’s easier to describe what objects <em>do</em>, which is respond to messages.<span class="intersentencespace"></span> An object like a string, for example, can respond to the message <code>length</code>, which returns the number of characters in the string:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s2">"foobar"</span><span class="o">.</span><span class="n">length</span>        <span class="c1"># Passing the "length" message to a string</span>
+<span class="go">=&gt; 6</span>
+</pre></div></div>
+<p>Typically, the messages that get passed to objects are <em>methods</em>, which are functions defined on those objects.<sup id="_cha-4_footnote-ref-4" class="footnote intersentence"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-4">4</a></sup><span class="intersentencespace"></span> Strings also respond to the <code>empty?</code> method:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s2">"foobar"</span><span class="o">.</span><span class="n">empty?</span>
+<span class="go">=&gt; false</span>
+<span class="gp">&gt;&gt; </span><span class="s2">""</span><span class="o">.</span><span class="n">empty?</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>Note the question mark at the end of the <code>empty?</code> method.<span class="intersentencespace"></span> This is a Ruby convention indicating that the return value is <em>boolean</em>: <code>true</code> or <code>false</code>.<span class="intersentencespace"></span> Booleans are especially useful for <em>control flow</em>:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">"foobar"</span>
+<span class="gp">&gt;&gt; </span><span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">empty?</span>
+<span class="gp">&gt;&gt; </span>  <span class="s2">"The string is empty"</span>
+<span class="gp">&gt;&gt; </span><span class="k">else</span>
+<span class="gp">&gt;&gt; </span>  <span class="s2">"The string is nonempty"</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; "The string is nonempty"</span>
+</pre></div></div>
+<p>Booleans can also be combined using the <code>&amp;&amp;</code> (“and”), <code>||</code> (“or”), and <code>!</code> (“not”) operators:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="s2">"foo"</span>
+<span class="go">=&gt; "foo"</span>
+<span class="gp">&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="s2">""</span>
+<span class="go">=&gt; ""</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="s2">"Both strings are empty"</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">empty?</span> <span class="o">&amp;&amp;</span> <span class="n">y</span><span class="o">.</span><span class="n">empty?</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="s2">"One of the strings is empty"</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">empty?</span> <span class="o">||</span> <span class="n">y</span><span class="o">.</span><span class="n">empty?</span>
+<span class="go">"One of the strings is empty"</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="s2">"x is not empty"</span> <span class="k">if</span> <span class="o">!</span><span class="n">x</span><span class="o">.</span><span class="n">empty?</span>
+<span class="go">"x is not empty"</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div>
+<p>Since everything in Ruby is an object, it follows that <code>nil</code> is an object, so it too can respond to methods.<span class="intersentencespace"></span> One example is the <code>to_s</code> method that can convert virtually any object to a string:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="kp">nil</span><span class="o">.</span><span class="n">to_s</span>
+<span class="go">=&gt; ""</span>
+</pre></div></div>
+<p>This certainly appears to be an empty string, as we can verify by <em>chaining</em> the messages we pass to <code>nil</code>:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="kp">nil</span><span class="o">.</span><span class="n">empty?</span>
+<span class="go">NoMethodError: You have a nil object when you didn't expect it!</span>
+<span class="go">You might have expected an instance of Array.</span>
+<span class="go">The error occurred while evaluating nil.empty?</span>
+<span class="gp">&gt;&gt; </span><span class="kp">nil</span><span class="o">.</span><span class="n">to_s</span><span class="o">.</span><span class="n">empty?</span>      <span class="c1"># Message chaining</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>We see here that the <code>nil</code> object doesn’t itself respond to the <code>empty?</code> method, but <code>nil.to_s</code> does.</p>
+<p>There’s a special method for testing for <code>nil</code>-ness, which you might be able to guess:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s2">"foo"</span><span class="o">.</span><span class="n">nil?</span>
+<span class="go">=&gt; false</span>
+<span class="gp">&gt;&gt; </span><span class="s2">""</span><span class="o">.</span><span class="n">nil?</span>
+<span class="go">=&gt; false</span>
+<span class="gp">&gt;&gt; </span><span class="kp">nil</span><span class="o">.</span><span class="n">nil?</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>The code</p>
+<div class="code"><div class="highlight"><pre><span class="nb">puts</span> <span class="s2">"x is not empty"</span> <span class="k">if</span> <span class="o">!</span><span class="n">x</span><span class="o">.</span><span class="n">empty?</span>
+</pre></div></div>
+<p>also shows an alternate use of the <code>if</code> keyword: Ruby allows you to write a statement that is evaluated only if the statement following <code>if</code> is true.<span class="intersentencespace"></span> There’s a complementary <code>unless</code> keyword that works the same way:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">string</span> <span class="o">=</span> <span class="s2">"foobar"</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="s2">"The string '</span><span class="si">#{</span><span class="n">string</span><span class="si">}</span><span class="s2">' is nonempty."</span> <span class="k">unless</span> <span class="n">string</span><span class="o">.</span><span class="n">empty?</span>
+<span class="go">The string 'foobar' is nonempty.</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div>
+<p>It’s worth noting that the <code>nil</code> object is special, in that it is the <em>only</em> Ruby object that is false in a boolean context, apart from <code>false</code> itself:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">if</span> <span class="kp">nil</span>
+<span class="gp">&gt;&gt; </span>  <span class="kp">true</span>
+<span class="gp">&gt;&gt; </span><span class="k">else</span>
+<span class="gp">&gt;&gt; </span>  <span class="kp">false</span>        <span class="c1"># nil is false</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; false</span>
+</pre></div></div>
+<p>In particular, all other Ruby objects are <em>true</em>, even 0:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">if</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt; </span>  <span class="kp">true</span>        <span class="c1"># 0 (and everything other than nil and false itself) is true</span>
+<span class="gp">&gt;&gt; </span><span class="k">else</span>
+<span class="gp">&gt;&gt; </span>  <span class="kp">false</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+</div>
+<div id="_sec-method_definitions" data-tralics-id="uid297" class="subsection" data-number="4.2.4"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-method_definitions" class="heading hyperref"><span class="number">4.2.4 </span>Method definitions</a></h3>
+<p>The console allows us to define methods the same way we did with the <code>home</code> action from <a href="http://www.railstutorial.org/book/static_pages#code-static_pages_controller" class="hyperref">Listing&nbsp;<span class="ref">3.6</span></a> or the <code>full_title</code> helper from <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-title_helper" class="hyperref">Listing&nbsp;<span class="ref">4.2</span></a>.<span class="intersentencespace"></span> (Defining methods in the console is a bit cumbersome, and ordinarily you would use a file, but it’s convenient for demonstration purposes.)<span class="intersentencespace"></span> For example, let’s define a function <code>string_message</code> that takes a single <em>argument</em> and returns a message based on whether the argument is empty or not:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">def</span> <span class="nf">string_message</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">if</span> <span class="n">string</span><span class="o">.</span><span class="n">empty?</span>
+<span class="gp">&gt;&gt; </span>    <span class="s2">"It's an empty string!"</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">else</span>
+<span class="gp">&gt;&gt; </span>    <span class="s2">"The string is nonempty."</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">end</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="n">string_message</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+<span class="go">It's an empty string!</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="n">string_message</span><span class="p">(</span><span class="s2">"foobar"</span><span class="p">)</span>
+<span class="go">The string is nonempty.</span>
+</pre></div></div>
+<p>Note that Ruby functions have an <em>implicit return</em>, meaning they return the last statement evaluated—in this case, one of the two message strings, depending on whether the method’s argument <code>string</code> is empty or not.<span class="intersentencespace"></span> Ruby also has an explicit return option; the following function is equivalent to the one above:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">def</span> <span class="nf">string_message</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">return</span> <span class="s2">"It's an empty string!"</span> <span class="k">if</span> <span class="n">string</span><span class="o">.</span><span class="n">empty?</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">return</span> <span class="s2">"The string is nonempty."</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+</pre></div></div>
+<p>(The alert reader might notice at this point that the second <code>return</code> here is actually unnecessary—being the last expression in the function, the string <code>"The string is nonempty."</code> will be returned regardless of the <code>return</code> keyword, but using <code>return</code> in both places has a pleasing symmetry to it.)</p>
+<p>It’s also important to understand that the name of the function argument is irrelevant as far as the caller is concerned.<span class="intersentencespace"></span> In other words, the first example above could replace <code>string</code> with any other valid variable name, such as <code>the_function_argument</code>, and it would work just the same:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">def</span> <span class="nf">string_message</span><span class="p">(</span><span class="n">the_function_argument</span><span class="p">)</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">if</span> <span class="n">the_function_argument</span><span class="o">.</span><span class="n">empty?</span>
+<span class="gp">&gt;&gt; </span>    <span class="s2">"It's an empty string!"</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">else</span>
+<span class="gp">&gt;&gt; </span>    <span class="s2">"The string is nonempty."</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">end</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="n">string_message</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+<span class="go">It's an empty string!</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="n">string_message</span><span class="p">(</span><span class="s2">"foobar"</span><span class="p">)</span>
+<span class="go">The string is nonempty.</span>
+</pre></div></div>
+</div>
+<div id="_sec-back_to_the_title_helper" data-tralics-id="uid298" class="subsection" data-number="4.2.5"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-back_to_the_title_helper" class="heading hyperref"><span class="number">4.2.5 </span>Back to the title helper</a></h3>
+<p>We are now in a position to understand the <code>full_title</code> helper from <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-title_helper" class="hyperref">Listing&nbsp;<span class="ref">4.2</span></a>:<sup id="_cha-4_footnote-ref-5" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-5">5</a></sup></p>
+<div class="code"><div class="highlight"><pre><span class="k">module</span> <span class="nn">ApplicationHelper</span>
+
+  <span class="c1"># Returns the full title on a per-page basis.       # Documentation comment</span>
+  <span class="k">def</span> <span class="nf">full_title</span><span class="p">(</span><span class="n">page_title</span><span class="p">)</span>                          <span class="c1"># Method definition</span>
+    <span class="n">base_title</span> <span class="o">=</span> <span class="s2">"Ruby on Rails Tutorial Sample App"</span>  <span class="c1"># Variable assignment</span>
+    <span class="k">if</span> <span class="n">page_title</span><span class="o">.</span><span class="n">empty?</span>                              <span class="c1"># Boolean test</span>
+      <span class="n">base_title</span>                                      <span class="c1"># Implicit return</span>
+    <span class="k">else</span>
+      <span class="s2">"</span><span class="si">#{</span><span class="n">base_title</span><span class="si">}</span><span class="s2"> | </span><span class="si">#{</span><span class="n">page_title</span><span class="si">}</span><span class="s2">"</span>                 <span class="c1"># String interpolation</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div></div>
+<p>These elements—function definition, variable assignment, boolean tests, control flow, and string interpolation—come together to make a compact helper method for use in our site layout.<span class="intersentencespace"></span> The final element is <code>module ApplicationHelper</code>: modules give us a way to package together related methods, which can then be <em>mixed in</em> to Ruby classes using <code>include</code>.<span class="intersentencespace"></span> When writing ordinary Ruby, you often write modules and include them explicitly yourself, but in the case of a helper module Rails handles the inclusion for us.<span class="intersentencespace"></span> The result is that the <code>full_title</code> method is <a href="http://catb.org/jargon/html/A/automagically.html">automagically</a> available in all our views.</p>
+</div></div><div id="_sec-other_data_structures" data-tralics-id="cid22" class="section" data-number="4.3"><h2><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-other_data_structures" class="heading hyperref"><span class="number">4.3 </span>Other data structures</a></h2>
+<p>Although web apps are ultimately about strings, actually <em>making</em> those strings requires using other data structures as well.<span class="intersentencespace"></span> In this section, we’ll learn about some Ruby data structures important for writing Rails applications.</p>
+<div id="_sec-arrays_and_ranges" data-tralics-id="uid300" class="subsection" data-number="4.3.1"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-arrays_and_ranges" class="heading hyperref"><span class="number">4.3.1 </span>Arrays and ranges</a></h3>
+<p>An array is just a list of elements in a particular order.<span class="intersentencespace"></span> We haven’t discussed arrays yet in the <em>Rails Tutorial</em>, but understanding them gives a good foundation for understanding hashes (<a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-hashes_and_symbols" class="hyperref">Section&nbsp;<span class="ref">4.3.3</span></a>) and for aspects of Rails data modeling (such as the <code>has_many</code> association seen in <a href="http://www.railstutorial.org/book/demo_app#sec-demo_user_has_many_microposts" class="hyperref">Section&nbsp;<span class="ref">2.3.3</span></a> and covered more in <a href="http://www.railstutorial.org/book/user_microposts#sec-user_micropost_associations" class="hyperref">Section&nbsp;<span class="ref">10.1.3</span></a>).</p>
+<p>So far we’ve spent a lot of time understanding strings, and there’s a natural way to get from strings to arrays using the <code>split</code> method:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span> <span class="s2">"foo bar     baz"</span><span class="o">.</span><span class="n">split</span>     <span class="c1"># Split a string into a three-element array.</span>
+<span class="go">=&gt; ["foo", "bar", "baz"]</span>
+</pre></div></div>
+<p>The result of this operation is an array of three strings.<span class="intersentencespace"></span> By default, <code>split</code> divides a string into an array by splitting on whitespace, but you can split on nearly anything else as well:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s2">"fooxbarxbazx"</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
+<span class="go">=&gt; ["foo", "bar", "baz"]</span>
+</pre></div></div>
+<p>As is conventional in most computer languages, Ruby arrays are <em>zero-offset</em>, which means that the first element in the array has index&nbsp;0, the second has index&nbsp;1, and so on:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">42</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">17</span><span class="o">]</span>
+<span class="go">=&gt; [42, 8, 17]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span>               <span class="c1"># Ruby uses square brackets for array access.</span>
+<span class="go">=&gt; 42</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span>
+<span class="go">=&gt; 8</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span>
+<span class="go">=&gt; 17</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span>              <span class="c1"># Indices can even be negative!</span>
+<span class="go">=&gt; 17</span>
+</pre></div></div>
+<p>We see here that Ruby uses square brackets to access array elements.<span class="intersentencespace"></span> In addition to this bracket notation, Ruby offers synonyms for some commonly accessed elements:<sup id="_cha-4_footnote-ref-6" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-6">6</a></sup></p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span>                  <span class="c1"># Just a reminder of what 'a' is</span>
+<span class="go">=&gt; [42, 8, 17]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">first</span>
+<span class="go">=&gt; 42</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">second</span>
+<span class="go">=&gt; 8</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">last</span>
+<span class="go">=&gt; 17</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">last</span> <span class="o">==</span> <span class="n">a</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span>    <span class="c1"># Comparison using ==</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>This last line introduces the equality comparison operator <code>==</code>, which Ruby shares with many other languages, along with the associated <code>!=</code> (“not equal”), etc.:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">length</span>       <span class="c1"># Like strings, arrays respond to the 'length' method.</span>
+<span class="go">=&gt; 3</span>
+<span class="gp">&gt;&gt; </span><span class="n">x</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="go">=&gt; true</span>
+<span class="gp">&gt;&gt; </span><span class="n">x</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="go">=&gt; false</span>
+<span class="gp">&gt;&gt; </span><span class="n">x</span> <span class="o">!=</span> <span class="mi">1</span>
+<span class="go">=&gt; true</span>
+<span class="gp">&gt;&gt; </span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+<span class="go">=&gt; true</span>
+<span class="gp">&gt;&gt; </span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<span class="go">=&gt; false</span>
+</pre></div></div>
+<p>In addition to <code>length</code> (seen in the first line above), arrays respond to a wealth of other methods:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span>
+<span class="go">=&gt; [42, 8, 17]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">sort</span>
+<span class="go">=&gt; [8, 17, 42]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">reverse</span>
+<span class="go">=&gt; [17, 8, 42]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">shuffle</span>
+<span class="go">=&gt; [17, 42, 8]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span>
+<span class="go">=&gt; [42, 8, 17]</span>
+</pre></div></div>
+<p>Note that none of the methods above changes <code>a</code> itself.<span class="intersentencespace"></span> To <em>mutate</em> the array, use the corresponding “bang” methods (so-called because the exclamation point is usually pronounced “bang” in this context):</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span>
+<span class="go">=&gt; [42, 8, 17]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">sort!</span>
+<span class="go">=&gt; [8, 17, 42]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span>
+<span class="go">=&gt; [8, 17, 42]</span>
+</pre></div></div>
+<p>You can also add to arrays with the <code>push</code> method or its equivalent operator, <span class="inline_verbatim">&lt;&lt;</span>:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>                  <span class="c1"># Pushing 6 onto an array</span>
+<span class="go">=&gt; [42, 8, 17, 6]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span>                     <span class="c1"># Pushing 7 onto an array</span>
+<span class="go">=&gt; [42, 8, 17, 6, 7]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s2">"foo"</span> <span class="o">&lt;&lt;</span> <span class="s2">"bar"</span>        <span class="c1"># Chaining array pushes</span>
+<span class="go">=&gt; [42, 8, 17, 6, 7, "foo", "bar"]</span>
+</pre></div></div>
+<p>This last example shows that you can chain pushes together, and also that, unlike arrays in many other languages, Ruby arrays can contain a mixture of different types (in this case, integers and strings).</p>
+<p>Before we saw <code>split</code> convert a string to an array.<span class="intersentencespace"></span> We can also go the other way with the <code>join</code> method:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span>
+<span class="go">=&gt; [42, 8, 17, 7, "foo", "bar"]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">join</span>                       <span class="c1"># Join on nothing.</span>
+<span class="go">=&gt; "428177foobar"</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">', '</span><span class="p">)</span>                 <span class="c1"># Join on comma-space.</span>
+<span class="go">=&gt; "42, 8, 17, 7, foo, bar"</span>
+</pre></div></div>
+<p>Closely related to arrays are <em>ranges</em>, which can probably most easily be understood by converting them to arrays using the <code>to_a</code> method:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span>
+<span class="go">=&gt; 0..9</span>
+<span class="gp">&gt;&gt; </span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="o">.</span><span class="n">to_a</span>              <span class="c1"># Oops, call to_a on 9.</span>
+<span class="go">NoMethodError: undefined method `to_a' for 9:Fixnum</span>
+<span class="gp">&gt;&gt; </span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>            <span class="c1"># Use parentheses to call to_a on the range.</span>
+<span class="go">=&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div></div>
+<p>Though <code>0..9</code> is a valid range, the second expression above shows that we need to add parentheses to call a method on it.</p>
+<p>Ranges are useful for pulling out array elements:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="sx">%w[foo bar baz quux]</span>         <span class="c1"># Use %w to make a string array.</span>
+<span class="go">=&gt; ["foo", "bar", "baz", "quux"]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">2</span><span class="o">]</span>
+<span class="go">=&gt; ["foo", "bar", "baz"]</span>
+</pre></div></div>
+<p>A particularly useful trick is to use the index -1 at the end of the range to select every element from the starting point to the end of the array <em>without</em> explicitly having to use the array’s length:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">9</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>
+<span class="go">=&gt; [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">[</span><span class="mi">2</span><span class="o">.</span><span class="n">.</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">length</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">]</span>               <span class="c1"># Explicitly use the array's length.</span>
+<span class="go">=&gt; [2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span class="gp">&gt;&gt; </span><span class="n">a</span><span class="o">[</span><span class="mi">2</span><span class="o">.</span><span class="n">.</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span>                         <span class="c1"># Use the index -1 trick.</span>
+<span class="go">=&gt; [2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div></div>
+<p>Ranges also work with characters:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="p">(</span><span class="s1">'a'</span><span class="o">.</span><span class="n">.</span><span class="s1">'e'</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>
+<span class="go">=&gt; ["a", "b", "c", "d", "e"]</span>
+</pre></div></div>
+</div>
+<div id="_sec-blocks" data-tralics-id="uid302" class="subsection" data-number="4.3.2"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-blocks" class="heading hyperref"><span class="number">4.3.2 </span>Blocks</a></h3>
+<p>Both arrays and ranges respond to a host of methods that accept <em>blocks</em>, which are simultaneously one of Ruby’s most powerful and most confusing features:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="nb">puts</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span> <span class="p">}</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">6</span>
+<span class="go">8</span>
+<span class="go">10</span>
+<span class="go">=&gt; 1..5</span>
+</pre></div></div>
+<p>This code calls the <code>each</code> method on the range <code>(1..5)</code> and passes it the block <code>{ |i| puts 2 * i }</code>.<span class="intersentencespace"></span> The vertical bars around the variable name in&nbsp;<code>|i|</code> are Ruby syntax for a block variable, and it’s up to the method to know what to do with the block.<span class="intersentencespace"></span> In this case, the range’s <code>each</code> method can handle a block with a single local variable, which we’ve called&nbsp;<code>i</code>, and it just executes the block for each value in the range.</p>
+<p>Curly braces are one way to indicate a block, but there is a second way as well:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+<span class="gp">?&gt; </span>  <span class="nb">puts</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">i</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">2</span>
+<span class="go">4</span>
+<span class="go">6</span>
+<span class="go">8</span>
+<span class="go">10</span>
+<span class="go">=&gt; 1..5</span>
+</pre></div></div>
+<p>Blocks can be more than one line, and often are.<span class="intersentencespace"></span> In the <em>Rails Tutorial</em> we’ll follow the common convention of using curly braces only for short one-line blocks and the <code>do..end</code> syntax for longer one-liners and for multi-line blocks:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">number</span><span class="o">|</span>
+<span class="gp">?&gt; </span>  <span class="nb">puts</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">number</span>
+<span class="gp">&gt;&gt; </span>  <span class="nb">puts</span> <span class="s1">'--'</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">2</span>
+<span class="go">--</span>
+<span class="go">4</span>
+<span class="go">--</span>
+<span class="go">6</span>
+<span class="go">--</span>
+<span class="go">8</span>
+<span class="go">--</span>
+<span class="go">10</span>
+<span class="go">--</span>
+<span class="go">=&gt; 1..5</span>
+</pre></div></div>
+<p>Here I’ve used <code>number</code> in place of&nbsp;<code>i</code> just to emphasize that any variable name will do.</p>
+<p>Unless you already have a substantial programming background, there is no shortcut to understanding blocks; you just have to see them a lot, and eventually you’ll get used to them.<sup id="_cha-4_footnote-ref-7" class="footnote intersentence"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-7">7</a></sup><span class="intersentencespace"></span> Luckily, humans are quite good at making generalizations from concrete examples; here are a few more, including a couple using the <code>map</code> method:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="p">{</span> <span class="nb">puts</span> <span class="s2">"Betelgeuse!"</span> <span class="p">}</span>   <span class="c1"># 3.times takes a block with no variables.</span>
+<span class="go">"Betelgeuse!"</span>
+<span class="go">"Betelgeuse!"</span>
+<span class="go">"Betelgeuse!"</span>
+<span class="go">=&gt; 3</span>
+<span class="gp">&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="p">}</span>          <span class="c1"># The ** notation is for 'power'.</span>
+<span class="go">=&gt; [1, 4, 9, 16, 25]</span>
+<span class="gp">&gt;&gt; </span><span class="sx">%w[a b c]</span>                        <span class="c1"># Recall that %w makes string arrays.</span>
+<span class="go">=&gt; ["a", "b", "c"]</span>
+<span class="gp">&gt;&gt; </span><span class="sx">%w[a b c]</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">char</span><span class="o">|</span> <span class="n">char</span><span class="o">.</span><span class="n">upcase</span> <span class="p">}</span>
+<span class="go">=&gt; ["A", "B", "C"]</span>
+<span class="gp">&gt;&gt; </span><span class="sx">%w[A B C]</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="o">|</span><span class="n">char</span><span class="o">|</span> <span class="n">char</span><span class="o">.</span><span class="n">downcase</span> <span class="p">}</span>
+<span class="go">=&gt; ["a", "b", "c"]</span>
+</pre></div></div>
+<p>As you can see, the <code>map</code> method returns the result of applying the given block to each element in the array or range.</p>
+<p>By the way, we’re now in a position to understand the line of Ruby I threw into <a href="http://www.railstutorial.org/book/beginning#sec-heroku_commands" class="hyperref">Section&nbsp;<span class="ref">1.4.4</span></a> to generate random subdomains:</p>
+<div class="code"><div class="highlight"><pre><span class="p">(</span><span class="s1">'a'</span><span class="o">.</span><span class="n">.</span><span class="s1">'z'</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">shuffle</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">7</span><span class="o">].</span><span class="n">join</span>
+</pre></div></div>
+<p>Let’s build it up step-by-step:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="p">(</span><span class="s1">'a'</span><span class="o">.</span><span class="n">.</span><span class="s1">'z'</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>                     <span class="c1"># An alphabet array</span>
+<span class="go">=&gt; ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",</span>
+<span class="go">"p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]</span>
+<span class="gp">&gt;&gt; </span><span class="p">(</span><span class="s1">'a'</span><span class="o">.</span><span class="n">.</span><span class="s1">'z'</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">shuffle</span>             <span class="c1"># Shuffle it.</span>
+<span class="go">=&gt; ["c", "g", "l", "k", "h", "z", "s", "i", "n", "d", "y", "u", "t", "j", "q",</span>
+<span class="go">"b", "r", "o", "f", "e", "w", "v", "m", "a", "x", "p"]</span>
+<span class="gp">&gt;&gt; </span><span class="p">(</span><span class="s1">'a'</span><span class="o">.</span><span class="n">.</span><span class="s1">'z'</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">shuffle</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">7</span><span class="o">]</span>       <span class="c1"># Pull out the first eight elements.</span>
+<span class="go">=&gt; ["f", "w", "i", "a", "h", "p", "c", "x"]</span>
+<span class="gp">&gt;&gt; </span><span class="p">(</span><span class="s1">'a'</span><span class="o">.</span><span class="n">.</span><span class="s1">'z'</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">shuffle</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">7</span><span class="o">].</span><span class="n">join</span>  <span class="c1"># Join them together to make one string.</span>
+<span class="go">=&gt; "mznpybuj"</span>
+</pre></div></div>
+</div>
+<div id="_sec-hashes_and_symbols" data-tralics-id="uid304" class="subsection" data-number="4.3.3"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-hashes_and_symbols" class="heading hyperref"><span class="number">4.3.3 </span>Hashes and symbols</a></h3>
+<p>Hashes are essentially arrays that aren’t limited to integer indices.<span class="intersentencespace"></span> (In fact, some languages, especially Perl, sometimes call hashes <em>associative arrays</em> for this reason.)<span class="intersentencespace"></span> Instead, hash indices, or <em>keys</em>, can be almost any object.<span class="intersentencespace"></span> For example, we can use strings as keys:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="p">{}</span>                          <span class="c1"># {} is an empty hash.</span>
+<span class="go">=&gt; {}</span>
+<span class="gp">&gt;&gt; </span><span class="n">user</span><span class="o">[</span><span class="s2">"first_name"</span><span class="o">]</span> <span class="o">=</span> <span class="s2">"Michael"</span>     <span class="c1"># Key "first_name", value "Michael"</span>
+<span class="go">=&gt; "Michael"</span>
+<span class="gp">&gt;&gt; </span><span class="n">user</span><span class="o">[</span><span class="s2">"last_name"</span><span class="o">]</span> <span class="o">=</span> <span class="s2">"Hartl"</span>        <span class="c1"># Key "last_name", value "Hartl"</span>
+<span class="go">=&gt; "Hartl"</span>
+<span class="gp">&gt;&gt; </span><span class="n">user</span><span class="o">[</span><span class="s2">"first_name"</span><span class="o">]</span>                 <span class="c1"># Element access is like arrays.</span>
+<span class="go">=&gt; "Michael"</span>
+<span class="gp">&gt;&gt; </span><span class="n">user</span>                               <span class="c1"># A literal representation of the hash</span>
+<span class="go">=&gt; {"last_name"=&gt;"Hartl", "first_name"=&gt;"Michael"}</span>
+</pre></div></div>
+<p>Hashes are indicated with curly braces containing key-value pairs; a pair of braces with no key-value pairs—i.e., <code>{}</code>—is an empty hash.<span class="intersentencespace"></span> It’s important to note that the curly braces for hashes have nothing to do with the curly braces for blocks.<span class="intersentencespace"></span> (Yes, this can be confusing.)<span class="intersentencespace"></span> Although hashes resemble arrays, one important difference is that hashes don’t generally guarantee keeping their elements in a particular order.<sup id="_cha-4_footnote-ref-8" class="footnote intersentence"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-8">8</a></sup><span class="intersentencespace"></span> If order matters, use an array.</p>
+<p>Instead of defining hashes one item at a time using square brackets, it’s easy to use a literal representation with keys and values separated by&nbsp;<code>=&gt;</code>, called a “hashrocket”:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"first_name"</span> <span class="o">=&gt;</span> <span class="s2">"Michael"</span><span class="p">,</span> <span class="s2">"last_name"</span> <span class="o">=&gt;</span> <span class="s2">"Hartl"</span> <span class="p">}</span>
+<span class="go">=&gt; {"last_name"=&gt;"Hartl", "first_name"=&gt;"Michael"}</span>
+</pre></div></div>
+<p>Here I’ve used the usual Ruby convention of putting an extra space at the two ends of the hash—a convention ignored by the console output.<span class="intersentencespace"></span> (Don’t ask me why the spaces are conventional; probably some early influential Ruby programmer liked the look of the extra spaces, and the convention stuck.)</p>
+<p>So far we’ve used strings as hash keys, but in Rails it is much more common to use <em>symbols</em> instead.<span class="intersentencespace"></span> Symbols look kind of like strings, but prefixed with a colon instead of surrounded by quotes.<span class="intersentencespace"></span> For example, <code>:name</code> is a symbol.<span class="intersentencespace"></span> You can think of symbols as basically strings without all the extra baggage:<sup id="_cha-4_footnote-ref-9" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-9">9</a></sup></p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s2">"name"</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+<span class="go">=&gt; ["n", "a", "m", "e"]</span>
+<span class="gp">&gt;&gt; </span><span class="ss">:name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span>
+<span class="go">NoMethodError: undefined method `split' for :name:Symbol</span>
+<span class="gp">&gt;&gt; </span><span class="s2">"foobar"</span><span class="o">.</span><span class="n">reverse</span>
+<span class="go">=&gt; "raboof"</span>
+<span class="gp">&gt;&gt; </span><span class="ss">:foobar</span><span class="o">.</span><span class="n">reverse</span>
+<span class="go">NoMethodError: undefined method `reverse' for :foobar:Symbol</span>
+</pre></div></div>
+<p>Symbols are a special Ruby data type shared with very few other languages, so they may seem weird at first, but Rails uses them a lot, so you’ll get used to them fast.</p>
+<p>In terms of symbols as hash keys, we can define a <code>user</code> hash as follows:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Michael Hartl"</span><span class="p">,</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s2">"michael@example.com"</span> <span class="p">}</span>
+<span class="go">=&gt; {:name=&gt;"Michael Hartl", :email=&gt;"michael@example.com"}</span>
+<span class="gp">&gt;&gt; </span><span class="n">user</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span>              <span class="c1"># Access the value corresponding to :name.</span>
+<span class="go">=&gt; "Michael Hartl"</span>
+<span class="gp">&gt;&gt; </span><span class="n">user</span><span class="o">[</span><span class="ss">:password</span><span class="o">]</span>          <span class="c1"># Access the value of an undefined key.</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div>
+<p>We see here from the last example that the hash value for an undefined key is simply <code>nil</code>.</p>
+<p>Since it’s so common for hashes to use symbols as keys, Ruby&nbsp;1.9 supports a new syntax just for this special case:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">h1</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Michael Hartl"</span><span class="p">,</span> <span class="ss">:email</span> <span class="o">=&gt;</span> <span class="s2">"michael@example.com"</span> <span class="p">}</span>
+<span class="go">=&gt; {:name=&gt;"Michael Hartl", :email=&gt;"michael@example.com"}</span>
+<span class="gp">&gt;&gt; </span><span class="n">h2</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">"Michael Hartl"</span><span class="p">,</span> <span class="ss">email</span><span class="p">:</span> <span class="s2">"michael@example.com"</span> <span class="p">}</span>
+<span class="go">=&gt; {:name=&gt;"Michael Hartl", :email=&gt;"michael@example.com"}</span>
+<span class="gp">&gt;&gt; </span><span class="n">h1</span> <span class="o">==</span> <span class="n">h2</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>The second syntax replaces the symbol/hashrocket combination with the name of the key followed by a colon and a value:</p>
+<div class="code"><div class="highlight"><pre><span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">"Michael Hartl"</span><span class="p">,</span> <span class="ss">email</span><span class="p">:</span> <span class="s2">"michael@example.com"</span> <span class="p">}</span>
+</pre></div></div>
+<p>This construction more closely follows the hash notation in other languages (such as JavaScript) and enjoys growing popularity in the Rails community.<span class="intersentencespace"></span> Because both hash syntaxes are still in common use, it’s essential to be able to recognize both of them.<span class="intersentencespace"></span> Unfortunately, this can be confusing, especially since <code>:name</code> is valid on its own (as a standalone symbol) but <code>name:</code> has no meaning by itself.<span class="intersentencespace"></span> The bottom line is that <code>:name =&gt;</code> and <code>name:</code> are effectively the same <em>only inside literal hashes</em>, so that</p>
+<div class="code"><div class="highlight"><pre><span class="p">{</span> <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Michael Hartl"</span> <span class="p">}</span>
+</pre></div></div>
+<p>and</p>
+<div class="code"><div class="highlight"><pre><span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">"Michael Hartl"</span> <span class="p">}</span>
+</pre></div></div>
+<p>are equivalent, but otherwise you need to use <code>:name</code> (with the colon coming first) to denote a symbol</p>
+<p>Hash values can be virtually anything, even other hashes, as seen in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-nested_hashes" class="hyperref">Listing&nbsp;<span class="ref">4.6</span></a>.</p>
+<div class="codelisting" id="_code-nested_hashes" data-tralics-id="uid307" data-number="4.6"><div class="heading"><span class="number">Listing 4.6:</span> 
+
+<span class="description">Nested hashes.</span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>        <span class="c1"># Define a hash called 'params' (short for 'parameters').</span>
+<span class="go">=&gt; {}</span>
+<span class="gp">&gt;&gt; </span><span class="n">params</span><span class="o">[</span><span class="ss">:user</span><span class="o">]</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">name</span><span class="p">:</span> <span class="s2">"Michael Hartl"</span><span class="p">,</span> <span class="ss">email</span><span class="p">:</span> <span class="s2">"mhartl@example.com"</span> <span class="p">}</span>
+<span class="go">=&gt; {:name=&gt;"Michael Hartl", :email=&gt;"mhartl@example.com"}</span>
+<span class="gp">&gt;&gt; </span><span class="n">params</span>
+<span class="go">=&gt; {:user=&gt;{:name=&gt;"Michael Hartl", :email=&gt;"mhartl@example.com"}}</span>
+<span class="gp">&gt;&gt; </span> <span class="n">params</span><span class="o">[</span><span class="ss">:user</span><span class="o">][</span><span class="ss">:email</span><span class="o">]</span>
+<span class="go">=&gt; "mhartl@example.com"</span>
+</pre></div></div></div><p>These sorts of hashes-of-hashes, or <em>nested hashes</em>, are heavily used by Rails, as we’ll see starting in <a href="http://www.railstutorial.org/book/sign_up#sec-signup_failure" class="hyperref">Section&nbsp;<span class="ref">7.3</span></a>.</p>
+<p>As with arrays and ranges, hashes respond to the <code>each</code> method.<span class="intersentencespace"></span> For example, consider a hash named <code>flash</code> with keys for two conditions, <code>:success</code> and <code>:error</code>:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">flash</span> <span class="o">=</span> <span class="p">{</span> <span class="ss">success</span><span class="p">:</span> <span class="s2">"It worked!"</span><span class="p">,</span> <span class="ss">error</span><span class="p">:</span> <span class="s2">"It failed."</span> <span class="p">}</span>
+<span class="go">=&gt; {:success=&gt;"It worked!", :error=&gt;"It failed."}</span>
+<span class="gp">&gt;&gt; </span><span class="n">flash</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span>
+<span class="gp">?&gt; </span>  <span class="nb">puts</span> <span class="s2">"Key </span><span class="si">#{</span><span class="n">key</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2"> has value </span><span class="si">#{</span><span class="n">value</span><span class="o">.</span><span class="n">inspect</span><span class="si">}</span><span class="s2">"</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">Key :success has value "It worked!"</span>
+<span class="go">Key :error has value "It failed."</span>
+</pre></div></div>
+<p>Note that, while the <code>each</code> method for arrays takes a block with only one variable, <code>each</code> for hashes takes two, a <em>key</em> and a <em>value</em>.<span class="intersentencespace"></span> Thus, the <code>each</code> method for a hash iterates through the hash one key-value <em>pair</em> at a time.</p>
+<p>The last example uses the useful <code>inspect</code> method, which returns a string with a literal representation of the object it’s called on:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>            <span class="c1"># Put an array as a string.</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">3</span>
+<span class="go">4</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">inspect</span>    <span class="c1"># Put a literal array.</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:name</span><span class="o">.</span><span class="n">inspect</span>
+<span class="go">name</span>
+<span class="go">:name</span>
+<span class="gp">&gt;&gt; </span><span class="nb">puts</span> <span class="s2">"It worked!"</span><span class="p">,</span> <span class="s2">"It worked!"</span><span class="o">.</span><span class="n">inspect</span>
+<span class="go">It worked!</span>
+<span class="go">"It worked!"</span>
+</pre></div></div>
+<p>By the way, using <code>inspect</code> to print an object is common enough that there’s a shortcut for it, the <code>p</code> function:<sup id="_cha-4_footnote-ref-10" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-10">10</a></sup></p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="nb">p</span> <span class="ss">:name</span>             <span class="c1"># Same as 'puts :name.inspect'</span>
+<span class="go">:name</span>
+</pre></div></div>
+</div>
+<div id="_sec-css_revisited" data-tralics-id="uid309" class="subsection" data-number="4.3.4"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-css_revisited" class="heading hyperref"><span class="number">4.3.4 </span>CSS revisited</a></h3>
+<p>It’s time now to revisit the line from <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-application_layout_redux" class="hyperref">Listing&nbsp;<span class="ref">4.1</span></a> used in the layout to include the cascading style sheets:</p>
+<div class="code"><div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                       <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="cp">%&gt;</span>
+</pre></div></div>
+<p>We are now nearly in a position to understand this.<span class="intersentencespace"></span> As mentioned briefly in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-motivation" class="hyperref">Section&nbsp;<span class="ref">4.1</span></a>, Rails defines a special function to include stylesheets, and</p>
+<div class="code"><div class="highlight"><pre><span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                   <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div></div>
+<p>is a call to this function.<span class="intersentencespace"></span> But there are several mysteries.<span class="intersentencespace"></span> First, where are the parentheses?<span class="intersentencespace"></span> In Ruby, they are optional; these two are equivalent:</p>
+<div class="code"><div class="highlight"><pre><span class="c1"># Parentheses on function calls are optional.</span>
+<span class="n">stylesheet_link_tag</span><span class="p">(</span><span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                   <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">)</span>
+<span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                   <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div></div>
+<p>Second, the <code>media</code> argument sure looks like a hash, but where are the curly braces?<span class="intersentencespace"></span> When hashes are the <em>last</em> argument in a function call, the curly braces are optional; these two are equivalent:</p>
+<div class="code"><div class="highlight"><pre><span class="c1"># Curly braces on final hash arguments are optional.</span>
+<span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                     <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="p">}</span>
+<span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                   <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div></div>
+<p>Next, why does the <code>data-turbolinks-track</code> key/value pair use the old-style hashrocket syntax?<span class="intersentencespace"></span> This is because using the newer syntax to write</p>
+<div class="code"><div class="highlight"><pre><span class="n">data</span><span class="o">-</span><span class="n">turbolinks</span><span class="o">-</span><span class="ss">track</span><span class="p">:</span> <span class="kp">true</span>
+</pre></div></div>
+<p>is invalid because of the hyphens.<span class="intersentencespace"></span> This forces us to use the older syntax, yielding</p>
+<div class="code"><div class="highlight"><pre><span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div></div>
+<p>Finally, why does Ruby correctly interpret the lines</p>
+<div class="code"><div class="highlight"><pre><span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                   <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div></div>
+<p>even with a line break between the final elements?<span class="intersentencespace"></span> The answer is that Ruby doesn’t distinguish between newlines and other whitespace in this context.<sup id="_cha-4_footnote-ref-11" class="footnote intersentence"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-11">11</a></sup><span class="intersentencespace"></span> The <em>reason</em> I chose to break the code into pieces is that I prefer to keep lines of source code under 80 characters for legibility.<sup id="_cha-4_footnote-ref-12" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-12">12</a></sup></p>
+<p>So, we see now that the line</p>
+<div class="code"><div class="highlight"><pre><span class="n">stylesheet_link_tag</span> <span class="s2">"application"</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s2">"all"</span><span class="p">,</span>
+                                   <span class="s2">"data-turbolinks-track"</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</pre></div></div>
+<p>calls the <code>stylesheet_link_tag</code> function with two arguments: a string, indicating the path to the stylesheet, and a hash with two elements, indicating the media type and telling Rails to use the <a href="https://github.com/rails/turbolinks">turbolinks</a> feature (new in Rails&nbsp;4).<span class="intersentencespace"></span> (Turbolinks will be described in more detail in a future draft of this book.)<span class="intersentencespace"></span> Because of the <span class="inline_verbatim">&lt;%= %&gt;</span> brackets, the results are inserted into the template by ERb, and if you view the source of the page in your browser you should see the HTML needed to include a stylesheet (<a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-scss_source" class="hyperref">Listing&nbsp;<span class="ref">4.7</span></a>).<span class="intersentencespace"></span> (You may see some extra things, like <code>?body=1</code>, after the CSS filenames.<span class="intersentencespace"></span> These are inserted by Rails to ensure that browsers reload the CSS when it changes on the server.)</p>
+<div class="codelisting" id="_code-scss_source" data-tralics-id="uid312" data-number="4.7"><div class="heading"><span class="number">Listing 4.7:</span> 
+
+<span class="description">The HTML source produced by the CSS includes.</span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">data-turbolinks-track=</span><span class="s">"true"</span> <span class="na">href=</span><span class="s">"/assets/application.css"</span> <span class="na">media=</span><span class="s">"all"</span>
+<span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="nt">/&gt;</span>
+</pre></div></div></div><p>If you actually view the CSS file by navigating to <a href="http://localhost:3000/assets/application.css">http://localhost:3000/assets/application.css</a>, you’ll see that (apart from some comments) it is empty.<span class="intersentencespace"></span> We’ll set about changing this in <a href="http://www.railstutorial.org/book/filling_in_the_layout#cha-filling_in_the_layout" class="hyperref">Chapter&nbsp;<span class="ref">5</span></a>.</p>
+</div></div><div id="_sec-ruby_classes" data-tralics-id="cid23" class="section" data-number="4.4"><h2><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-ruby_classes" class="heading hyperref"><span class="number">4.4 </span>Ruby classes</a></h2>
+<p>We’ve said before that everything in Ruby is an object, and in this section we’ll finally get to define some of our own.<span class="intersentencespace"></span> Ruby, like many object-oriented languages, uses <em>classes</em> to organize methods; these classes are then <em>instantiated</em> to create objects.<span class="intersentencespace"></span> If you’re new to object-oriented programming, this may sound like gibberish, so let’s look at some concrete examples.</p>
+<div id="_sec-constructors" data-tralics-id="uid313" class="subsection" data-number="4.4.1"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-constructors" class="heading hyperref"><span class="number">4.4.1 </span>Constructors</a></h3>
+<p>We’ve seen lots of examples of using classes to instantiate objects, but we have yet to do so explicitly.<span class="intersentencespace"></span> For example, we instantiated a string using the double quote characters, which is a <em>literal constructor</em> for strings:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s2">"foobar"</span>       <span class="c1"># A literal constructor for strings using double quotes</span>
+<span class="go">=&gt; "foobar"</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span>
+<span class="go">=&gt; String</span>
+</pre></div></div>
+<p>We see here that strings respond to the method <code>class</code>, and simply return the class they belong to.</p>
+<p>Instead of using a literal constructor, we can use the equivalent <em>named constructor</em>, which involves calling the <code>new</code> method on the class name:<sup id="_cha-4_footnote-ref-13" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-13">13</a></sup></p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">String</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"foobar"</span><span class="p">)</span>   <span class="c1"># A named constructor for a string</span>
+<span class="go">=&gt; "foobar"</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span>
+<span class="go">=&gt; String</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span> <span class="o">==</span> <span class="s2">"foobar"</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>This is equivalent to the literal constructor, but it’s more explicit about what we’re doing.</p>
+<p>Arrays work the same way as strings:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="o">]</span><span class="p">)</span>
+<span class="go">=&gt; [1, 3, 2]</span>
+</pre></div></div>
+<p>Hashes, in contrast, are different.<span class="intersentencespace"></span> While the array constructor <code>Array.new</code> takes an initial value for the array, <code>Hash.new</code> takes a <em>default</em> value for the hash, which is the value of the hash for a nonexistent key:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span>
+<span class="go">=&gt; {}</span>
+<span class="gp">&gt;&gt; </span><span class="n">h</span><span class="o">[</span><span class="ss">:foo</span><span class="o">]</span>            <span class="c1"># Try to access the value for the nonexistent key :foo.</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>    <span class="c1"># Arrange for nonexistent keys to return 0 instead of nil.</span>
+<span class="go">=&gt; {}</span>
+<span class="gp">&gt;&gt; </span><span class="n">h</span><span class="o">[</span><span class="ss">:foo</span><span class="o">]</span>
+<span class="go">=&gt; 0</span>
+</pre></div></div>
+<p>When a method gets called on the class itself, as in the case of <code>new</code>, it’s called a <em>class method</em>.<span class="intersentencespace"></span> The result of calling <code>new</code> on a class is an object of that class, also called an <em>instance</em> of the class.<span class="intersentencespace"></span> A method called on an instance, such as <code>length</code>, is called an <em>instance method</em>.</p>
+</div>
+<div id="_sec-a_class_of_our_own" data-tralics-id="uid315" class="subsection" data-number="4.4.2"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-a_class_of_our_own" class="heading hyperref"><span class="number">4.4.2 </span>Class inheritance</a></h3>
+<p>When learning about classes, it’s useful to find out the <em>class hierarchy</em> using the <code>superclass</code> method:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="nb">String</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"foobar"</span><span class="p">)</span>
+<span class="go">=&gt; "foobar"</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span>                        <span class="c1"># Find the class of s.</span>
+<span class="go">=&gt; String</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span>             <span class="c1"># Find the superclass of String.</span>
+<span class="go">=&gt; Object</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span>  <span class="c1"># Ruby 1.9 uses a new BasicObject base class</span>
+<span class="go">=&gt; BasicObject</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div>
+<p>A diagram of this inheritance hierarchy appears in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#fig-string_inheritance_ruby_1_9" class="hyperref">Figure&nbsp;<span class="ref">4.1</span></a>.<span class="intersentencespace"></span> We see here that the superclass of <code>String</code> is <code>Object</code> and the superclass of <code>Object</code> is <code>BasicObject</code>, but <code>BasicObject</code> has no superclass.<span class="intersentencespace"></span> This pattern is true of every Ruby object: trace back the class hierarchy far enough and every class in Ruby ultimately inherits from <code>BasicObject</code>, which has no superclass itself.<span class="intersentencespace"></span> This is the technical meaning of “everything in Ruby is an object”.</p>
+<div class="center figure" id="_fig-string_inheritance_ruby_1_9" data-tralics-id="uid316" data-number="4.1"><span class="graphics"><img src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/string_inheritance_ruby_1_9.png" alt="string_inheritance_ruby_1_9"></span>
+<div class="caption"><span class="header">Figure 4.1: </span><span class="description">The inheritance hierarchy for the <code>String</code> class.
+</span></div></div>
+<p>To understand classes a little more deeply, there’s no substitute for making one of our own.<span class="intersentencespace"></span> Let’s make a <code>Word</code> class with a <code>palindrome?</code> method that returns <code>true</code> if the word is the same spelled forward and backward:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">class</span> <span class="nc">Word</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">def</span> <span class="nf">palindrome?</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+<span class="gp">&gt;&gt; </span>    <span class="n">string</span> <span class="o">==</span> <span class="n">string</span><span class="o">.</span><span class="n">reverse</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">end</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div>
+<p>We can use it as follows:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="no">Word</span><span class="o">.</span><span class="n">new</span>              <span class="c1"># Make a new Word object.</span>
+<span class="go">=&gt; #&lt;Word:0x22d0b20&gt;</span>
+<span class="gp">&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">palindrome?</span><span class="p">(</span><span class="s2">"foobar"</span><span class="p">)</span>
+<span class="go">=&gt; false</span>
+<span class="gp">&gt;&gt; </span><span class="n">w</span><span class="o">.</span><span class="n">palindrome?</span><span class="p">(</span><span class="s2">"level"</span><span class="p">)</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>If this example strikes you as a bit contrived, good; this is by design.<span class="intersentencespace"></span> It’s odd to create a new class just to create a method that takes a string as an argument.<span class="intersentencespace"></span> Since a word <em>is a</em> string, it’s more natural to have our <code>Word</code> class <em>inherit</em> from <code>String</code>, as seen in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-word_class" class="hyperref">Listing&nbsp;<span class="ref">4.8</span></a>.<span class="intersentencespace"></span> (You should exit the console and re-enter it to clear out the old definition of <code>Word</code>.)</p>
+<div class="codelisting" id="_code-word_class" data-tralics-id="uid317" data-number="4.8"><div class="heading"><span class="number">Listing 4.8:</span> 
+
+<span class="description">Defining a <code>Word</code> class in the console.</span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">class</span> <span class="nc">Word</span> <span class="o">&lt;</span> <span class="nb">String</span>             <span class="c1"># Word inherits from String.</span>
+<span class="gp">&gt;&gt; </span>  <span class="c1"># Returns true if the string is its own reverse.</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">def</span> <span class="nf">palindrome?</span>
+<span class="gp">&gt;&gt; </span>    <span class="nb">self</span> <span class="o">==</span> <span class="nb">self</span><span class="o">.</span><span class="n">reverse</span>        <span class="c1"># self is the string itself.</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">end</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div></div><p>Here <code>Word &lt; String</code> is the Ruby syntax for inheritance (discussed briefly in <a href="http://www.railstutorial.org/book/static_pages#sec-static_pages" class="hyperref">Section&nbsp;<span class="ref">3.1</span></a>), which ensures that, in addition to the new <code>palindrome?</code> method, words also have all the same methods as strings:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="no">Word</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"level"</span><span class="p">)</span>    <span class="c1"># Make a new Word, initialized with "level".</span>
+<span class="go">=&gt; "level"</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">palindrome?</span>            <span class="c1"># Words have the palindrome? method.</span>
+<span class="go">=&gt; true</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">length</span>                 <span class="c1"># Words also inherit all the normal string methods.</span>
+<span class="go">=&gt; 5</span>
+</pre></div></div>
+<p>Since the <code>Word</code> class inherits from <code>String</code>, we can use the console to see the class hierarchy explicitly:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span>
+<span class="go">=&gt; Word</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span>
+<span class="go">=&gt; String</span>
+<span class="gp">&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span>
+<span class="go">=&gt; Object</span>
+</pre></div></div>
+<p>This hierarchy is illustrated in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#fig-word_inheritance_ruby_1_9" class="hyperref">Figure&nbsp;<span class="ref">4.2</span></a>.</p>
+<div class="center figure" id="_fig-word_inheritance_ruby_1_9" data-tralics-id="uid318" data-number="4.2"><span class="graphics"><img src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/word_inheritance_ruby_1_9.png" alt="word_inheritance_ruby_1_9"></span>
+<div class="caption"><span class="header">Figure 4.2: </span><span class="description">The inheritance hierarchy for the (non-built-in) <code>Word</code> class from <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-word_class" class="hyperref">Listing&nbsp;<span class="ref">4.8</span></a>.
+</span></div></div>
+<p>In <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-word_class" class="hyperref">Listing&nbsp;<span class="ref">4.8</span></a>, note that checking that the word is its own reverse involves accessing the word inside the <code>Word</code> class.<span class="intersentencespace"></span> Ruby allows us to do this using the <code>self</code> keyword: inside the <code>Word</code> class, <code>self</code> is the object itself, which means we can use</p>
+<div class="code"><div class="highlight"><pre><span class="nb">self</span> <span class="o">==</span> <span class="nb">self</span><span class="o">.</span><span class="n">reverse</span>
+</pre></div></div>
+<p>to check if the word is a palindrome.<sup id="_cha-4_footnote-ref-14" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-14">14</a></sup></p>
+</div>
+<div id="_sec-modifying_built_in_classes" data-tralics-id="uid320" class="subsection" data-number="4.4.3"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-modifying_built_in_classes" class="heading hyperref"><span class="number">4.4.3 </span>Modifying built-in classes</a></h3>
+<p>While inheritance is a powerful idea, in the case of palindromes it might be even more natural to add the <code>palindrome?</code> method to the <code>String</code> class itself, so that (among other things) we can call <code>palindrome?</code> on a string literal, which we currently can’t do:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s2">"level"</span><span class="o">.</span><span class="n">palindrome?</span>
+<span class="go">NoMethodError: undefined method `palindrome?' for "level":String</span>
+</pre></div></div>
+<p>Amazingly, Ruby lets you do just this; Ruby classes can be <em>opened</em> and modified, allowing ordinary mortals such as ourselves to add methods to them:<sup id="_cha-4_footnote-ref-15" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-15">15</a></sup></p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">class</span> <span class="nc">String</span>
+<span class="gp">&gt;&gt; </span>  <span class="c1"># Returns true if the string is its own reverse.</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">def</span> <span class="nf">palindrome?</span>
+<span class="gp">&gt;&gt; </span>    <span class="nb">self</span> <span class="o">==</span> <span class="nb">self</span><span class="o">.</span><span class="n">reverse</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">end</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="s2">"deified"</span><span class="o">.</span><span class="n">palindrome?</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>(I don’t know which is cooler: that Ruby lets you add methods to built-in classes, or that <code>"deified"</code> is a palindrome.)</p>
+<p>Modifying built-in classes is a powerful technique, but with great power comes great responsibility, and it’s considered bad form to add methods to built-in classes without having a <em>really</em> good reason for doing so.<span class="intersentencespace"></span> Rails does have some good reasons; for example, in web applications we often want to prevent variables from being <em>blank</em>—e.g., a user’s name should be something other than spaces and other <a href="http://en.wikipedia.org/wiki/Whitespace_(computer_science)">whitespace</a>—so Rails adds a <code>blank?</code> method to Ruby.<span class="intersentencespace"></span> Since the Rails console automatically includes the Rails extensions, we can see an example here (this won’t work in plain <code>irb</code>):</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="s2">""</span><span class="o">.</span><span class="n">blank?</span>
+<span class="go">=&gt; true</span>
+<span class="gp">&gt;&gt; </span><span class="s2">"      "</span><span class="o">.</span><span class="n">empty?</span>
+<span class="go">=&gt; false</span>
+<span class="gp">&gt;&gt; </span><span class="s2">"      "</span><span class="o">.</span><span class="n">blank?</span>
+<span class="go">=&gt; true</span>
+<span class="gp">&gt;&gt; </span><span class="kp">nil</span><span class="o">.</span><span class="n">blank?</span>
+<span class="go">=&gt; true</span>
+</pre></div></div>
+<p>We see that a string of spaces is not <em>empty</em>, but it is <em>blank</em>.<span class="intersentencespace"></span> Note also that <code>nil</code> is blank; since <code>nil</code> isn’t a string, this is a hint that Rails actually adds <code>blank?</code> to <code>String</code>’s base class, which (as we saw at the beginning of this section) is <code>Object</code> itself.<span class="intersentencespace"></span> We’ll see some other examples of Rails additions to Ruby classes in <a href="http://www.railstutorial.org/book/sign_in_out#sec-remember_me" class="hyperref">Section&nbsp;<span class="ref">8.2.1</span></a>.</p>
+</div>
+<div id="_sec-a_controller_class" data-tralics-id="uid322" class="subsection" data-number="4.4.4"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-a_controller_class" class="heading hyperref"><span class="number">4.4.4 </span>A controller class</a></h3>
+<p>All this talk about classes and inheritance may have triggered a flash of recognition, because we have seen both before, in the StaticPages controller (<a href="http://www.railstutorial.org/book/static_pages#code-adding_the_about_page" class="hyperref">Listing&nbsp;<span class="ref">3.16</span></a>):</p>
+<div class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">StaticPagesController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+
+  <span class="k">def</span> <span class="nf">home</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">help</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">about</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div></div>
+<p>You’re now in a position to appreciate, at least vaguely, what this code means: <code>StaticPagesController</code> is a class that inherits from <code>ApplicationController</code>, and comes equipped with <code>home</code>, <code>help</code>, and <code>about</code> methods.<span class="intersentencespace"></span> Since each Rails console session loads the local Rails environment, we can even create a controller explicitly and examine its class hierarchy:<sup id="_cha-4_footnote-ref-16" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-16">16</a></sup></p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">controller</span> <span class="o">=</span> <span class="no">StaticPagesController</span><span class="o">.</span><span class="n">new</span>
+<span class="go">=&gt; #&lt;StaticPagesController:0x22855d0&gt;</span>
+<span class="gp">&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">class</span>
+<span class="go">=&gt; StaticPagesController</span>
+<span class="gp">&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span>
+<span class="go">=&gt; ApplicationController</span>
+<span class="gp">&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span>
+<span class="go">=&gt; ActionController::Base</span>
+<span class="gp">&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span>
+<span class="go">=&gt; ActionController::Metal</span>
+<span class="gp">&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span>
+<span class="go">=&gt; AbstractController::Base</span>
+<span class="gp">&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">class</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span><span class="o">.</span><span class="n">superclass</span>
+<span class="go">=&gt; Object</span>
+</pre></div></div>
+<p>A diagram of this hierarchy appears in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#fig-static_pages_controller_inheritance" class="hyperref">Figure&nbsp;<span class="ref">4.3</span></a>.</p>
+<div class="center figure" id="_fig-static_pages_controller_inheritance" data-tralics-id="uid324" data-number="4.3"><span class="graphics"><img src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/static_pages_controller_inheritance.png" alt="static_pages_controller_inheritance"></span>
+<div class="caption"><span class="header">Figure 4.3: </span><span class="description">The inheritance hierarchy for the StaticPages controller.
+</span></div></div>
+<p>We can even call the controller actions inside the console, which are just methods:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">controller</span><span class="o">.</span><span class="n">home</span>
+<span class="go">=&gt; nil</span>
+</pre></div></div>
+<p>Here the return value is <code>nil</code> because the <code>home</code> action is blank.</p>
+<p>But wait—actions don’t have return values, at least not ones that matter.<span class="intersentencespace"></span> The point of the <code>home</code> action, as we saw in <a href="http://www.railstutorial.org/book/static_pages#cha-static_pages" class="hyperref">Chapter&nbsp;<span class="ref">3</span></a>, is to render a web page, not to return a value.<span class="intersentencespace"></span> And I sure don’t remember ever calling <code>StaticPagesController.new</code> anywhere.<span class="intersentencespace"></span> What’s going on?</p>
+<p>What’s going on is that Rails is <em>written in</em> Ruby, but Rails isn’t Ruby.<span class="intersentencespace"></span> Some Rails classes are used like ordinary Ruby objects, but some are just <a href="http://www.answers.com/grist">grist</a> for Rails’ magic mill.<span class="intersentencespace"></span> Rails is <a href="http://en.wikipedia.org/wiki/Sui_generis"><em>sui generis</em></a>, and should be studied and understood separately from Ruby.<span class="intersentencespace"></span> This is why, if your principal programming interest is writing web applications, I recommend learning Rails first, then learning Ruby, then looping back to Rails.</p>
+</div>
+<div id="_sec-a_user_class" data-tralics-id="uid325" class="subsection" data-number="4.4.5"><h3><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-a_user_class" class="heading hyperref"><span class="number">4.4.5 </span>A user class</a></h3>
+<p>We end our tour of Ruby with a complete class of our own, a <code>User</code> class that anticipates the User model coming up in <a href="http://www.railstutorial.org/book/modeling_users#cha-modeling_users" class="hyperref">Chapter&nbsp;<span class="ref">6</span></a>.</p>
+<p>So far we’ve entered class definitions at the console, but this quickly becomes tiresome; instead, create the file <code>example_user.rb</code> in your application root directory and fill it with the contents of <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-example_user" class="hyperref">Listing&nbsp;<span class="ref">4.9</span></a>.</p>
+<div class="codelisting" id="_code-example_user" data-tralics-id="uid326" data-number="4.9"><div class="heading"><span class="number">Listing 4.9:</span> 
+
+<span class="description">Code for an example user.<span class="intersentencespace"></span> <span class="break"></span> <span class="filepath">example_user.rb</span></span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nc">User</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:email</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">attributes</span> <span class="o">=</span> <span class="p">{})</span>
+    <span class="vi">@name</span>  <span class="o">=</span> <span class="n">attributes</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span>
+    <span class="vi">@email</span> <span class="o">=</span> <span class="n">attributes</span><span class="o">[</span><span class="ss">:email</span><span class="o">]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">formatted_email</span>
+    <span class="s2">"</span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2"> &lt;</span><span class="si">#{</span><span class="vi">@email</span><span class="si">}</span><span class="s2">&gt;"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div></div></div><p>There’s quite a bit going on here, so let’s take it step by step.<span class="intersentencespace"></span> The first line,</p>
+<div class="code"><div class="highlight"><pre>  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:email</span>
+</pre></div></div>
+<p>creates <em>attribute accessors</em> corresponding to a user’s name and email address.<span class="intersentencespace"></span> This creates “getter” and “setter” methods that allow us to retrieve (get) and assign (set) <code>@name</code> and <code>@email</code> <em>instance variables</em>, which were mentioned briefly in <a href="http://www.railstutorial.org/book/demo_app#sec-mvc_in_action" class="hyperref">Section&nbsp;<span class="ref">2.2.2</span></a>.<span class="intersentencespace"></span> In Rails, the principal importance of instance variables is that they are automatically available in the views, but in general they are used for variables that need to be available throughout a Ruby class.<span class="intersentencespace"></span> (We’ll have more to say about this in a moment.)<span class="intersentencespace"></span> Instance variables always begin with an&nbsp;<code>@</code> sign, and are <code>nil</code> when undefined.</p>
+<p>The first method, <code>initialize</code>, is special in Ruby: it’s the method called when we execute <code>User.new</code>.<span class="intersentencespace"></span> This particular <code>initialize</code> takes one argument, <code>attributes</code>:</p>
+<div class="code"><div class="highlight"><pre>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">attributes</span> <span class="o">=</span> <span class="p">{})</span>
+    <span class="vi">@name</span>  <span class="o">=</span> <span class="n">attributes</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span>
+    <span class="vi">@email</span> <span class="o">=</span> <span class="n">attributes</span><span class="o">[</span><span class="ss">:email</span><span class="o">]</span>
+  <span class="k">end</span>
+</pre></div></div>
+<p>Here the <code>attributes</code> variable has a <em>default value</em> equal to the empty hash, so that we can define a user with no name or email address (recall from <a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-hashes_and_symbols" class="hyperref">Section&nbsp;<span class="ref">4.3.3</span></a> that hashes return <code>nil</code> for nonexistent keys, so <code>attributes[:name]</code> will be <code>nil</code> if there is no <code>:name</code> key, and similarly for <code>attributes[:email]</code>).</p>
+<p>Finally, our class defines a method called <code>formatted_email</code> that uses the values of the assigned <code>@name</code> and <code>@email</code> variables to build up a nicely formatted version of the user’s email address using string interpolation (<a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-strings" class="hyperref">Section&nbsp;<span class="ref">4.2.2</span></a>):</p>
+<div class="code"><div class="highlight"><pre>  <span class="k">def</span> <span class="nf">formatted_email</span>
+    <span class="s2">"</span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2"> &lt;</span><span class="si">#{</span><span class="vi">@email</span><span class="si">}</span><span class="s2">&gt;"</span>
+  <span class="k">end</span>
+</pre></div></div>
+<p>Because <code>@name</code> and <code>@email</code> are both instance variables (as indicated with the&nbsp;<code>@</code> sign), they are automatically available in the <code>formatted_email</code> method.</p>
+<p>Let’s fire up the console, <code>require</code> the example user code, and take our User class out for a spin:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="nb">require</span> <span class="s1">'./example_user'</span>     <span class="c1"># This is how you load the example_user code.</span>
+<span class="go">=&gt; ["User"]</span>
+<span class="gp">&gt;&gt; </span><span class="n">example</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">new</span>
+<span class="go">=&gt; #&lt;User:0x224ceec @email=nil, @name=nil&gt;</span>
+<span class="gp">&gt;&gt; </span><span class="n">example</span><span class="o">.</span><span class="n">name</span>                 <span class="c1"># nil since attributes[:name] is nil</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="n">example</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Example User"</span>           <span class="c1"># Assign a non-nil name</span>
+<span class="go">=&gt; "Example User"</span>
+<span class="gp">&gt;&gt; </span><span class="n">example</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="s2">"user@example.com"</span>      <span class="c1"># and a non-nil email address</span>
+<span class="go">=&gt; "user@example.com"</span>
+<span class="gp">&gt;&gt; </span><span class="n">example</span><span class="o">.</span><span class="n">formatted_email</span>
+<span class="go">=&gt; "Example User &lt;user@example.com&gt;"</span>
+</pre></div></div>
+<p>Here the <code>’.’</code> is Unix for “current directory”, and <code>’./example_user’</code> tells Ruby to look for an example user file relative to that location.<span class="intersentencespace"></span> The subsequent code creates an empty example user and then fills in the name and email address by assigning directly to the corresponding attributes (assignments made possible by the <code>attr_accessor</code> line in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-example_user" class="hyperref">Listing&nbsp;<span class="ref">4.9</span></a>).<span class="intersentencespace"></span> When we write</p>
+<div class="code"><div class="highlight"><pre><span class="n">example</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Example User"</span>
+</pre></div></div>
+<p>Ruby is setting the <code>@name</code> variable to <code>"Example User"</code> (and similarly for the <code>email</code> attribute), which we then use in the <code>formatted_email</code> method.</p>
+<p>Recalling from <a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-css_revisited" class="hyperref">Section&nbsp;<span class="ref">4.3.4</span></a> we can omit the curly braces for final hash arguments, we can create another user by passing a hash to the <code>initialize</code> method to create a user with pre-defined attributes:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="nb">name</span><span class="p">:</span> <span class="s2">"Michael Hartl"</span><span class="p">,</span> <span class="ss">email</span><span class="p">:</span> <span class="s2">"mhartl@example.com"</span><span class="p">)</span>
+<span class="go">=&gt; #&lt;User:0x225167c @email="mhartl@example.com", @name="Michael Hartl"&gt;</span>
+<span class="gp">&gt;&gt; </span><span class="n">user</span><span class="o">.</span><span class="n">formatted_email</span>
+<span class="go">=&gt; "Michael Hartl &lt;mhartl@example.com&gt;"</span>
+</pre></div></div>
+<p>We will see starting in <a href="http://www.railstutorial.org/book/sign_up#cha-sign_up" class="hyperref">Chapter&nbsp;<span class="ref">7</span></a> that initializing objects using a hash argument, a technique known as <em>mass assignment</em>, is common in Rails applications.</p>
+</div></div><div id="_sec-conclusion" data-tralics-id="cid24" class="section" data-number="4.5"><h2><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-conclusion" class="heading hyperref"><span class="number">4.5 </span>Conclusion</a></h2>
+<p>This concludes our overview of the Ruby language.<span class="intersentencespace"></span> In <a href="http://www.railstutorial.org/book/filling_in_the_layout#cha-filling_in_the_layout" class="hyperref">Chapter&nbsp;<span class="ref">5</span></a>, we’ll start putting it to good use in developing the sample application.</p>
+<p>We won’t be using the <code>example_user.rb</code> file from <a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-a_user_class" class="hyperref">Section&nbsp;<span class="ref">4.4.5</span></a>, so I suggest removing it:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">$</span> rm example_user.rb
+</pre></div></div>
+<p>Then commit the other changes to the main source code repository:</p>
+<div class="code"><div class="highlight"><pre><span class="gp">$</span> git add .
+<span class="gp">$</span> git commit -m <span class="s2">"Add a full_title helper"</span>
+</pre></div></div>
+</div><div id="_sec-exercises" data-tralics-id="cid25" class="section" data-number="4.6"><h2><a href="http://www.railstutorial.org/book/rails_flavored_ruby#sec-exercises" class="heading hyperref"><span class="number">4.6 </span>Exercises</a></h2>
+<ol><li>By replacing the question marks in <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-string_shuffle" class="hyperref">Listing&nbsp;<span class="ref">4.10</span></a> with the appropriate methods, combine <code>split</code>, <code>shuffle</code>, and <code>join</code> to write a function that shuffles the letters in a given string.
+</li>
+<li>Using <a href="http://www.railstutorial.org/book/rails_flavored_ruby#code-string_shuffle_two" class="hyperref">Listing&nbsp;<span class="ref">4.11</span></a> as a guide, add a <code>shuffle</code> method to the <code>String</code> class.
+</li>
+<li>Create three hashes called <code>person1</code>, <code>person2</code>, and <code>person3</code>, with first and last names under the keys <code>:first</code> and <code>:last</code>.<span class="intersentencespace"></span> Then create a <code>params</code> hash so that <code>params[:father]</code> is <code>person1</code>, <code>params[:mother]</code> is <code>person2</code>, and <code>params[:child]</code> is <code>person3</code>.<span class="intersentencespace"></span> Verify that, for example, <code>params[:father][:first]</code> has the right value.
+</li>
+<li>Find an online version of the Ruby API and read about the <code>Hash</code> method <code>merge</code>.
+</li>
+<li><strong>(optional)</strong> Follow the <a href="http://rubykoans.com/">Ruby Koans</a><sup id="_cha-4_footnote-ref-17" class="footnote"><a href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-17">17</a></sup> to seek Ruby enlightenment.<span class="intersentencespace"></span>
+</li></ol><div class="codelisting" id="_code-string_shuffle" data-tralics-id="uid333" data-number="4.10"><div class="heading"><span class="number">Listing 4.10:</span> 
+
+<span class="description">Skeleton for a string shuffle function.</span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">def</span> <span class="nf">string_shuffle</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt; </span>  <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="sc">?.</span><span class="p">?</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="n">string_shuffle</span><span class="p">(</span><span class="s2">"foobar"</span><span class="p">)</span>
+</pre></div></div></div><div class="codelisting" id="_code-string_shuffle_two" data-tralics-id="uid334" data-number="4.11"><div class="heading"><span class="number">Listing 4.11:</span> 
+
+<span class="description">Skeleton for a <code>shuffle</code> method attached to the <code>String</code> class.</span>
+</div>
+
+<div class="code"><div class="highlight"><pre><span class="gp">&gt;&gt; </span><span class="k">class</span> <span class="nc">String</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">def</span> <span class="nf">shuffle</span>
+<span class="gp">&gt;&gt; </span>    <span class="nb">self</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span><span class="o">.</span><span class="sc">?.</span><span class="p">?</span>
+<span class="gp">&gt;&gt; </span>  <span class="k">end</span>
+<span class="gp">&gt;&gt; </span><span class="k">end</span>
+<span class="go">=&gt; nil</span>
+<span class="gp">&gt;&gt; </span><span class="s2">"foobar"</span><span class="o">.</span><span class="n">shuffle</span>
+</pre></div></div></div></div><div id="cha-4_footnotes">
+  <ol class="footnotes"><li id="_cha-4_footnote-1">If a helper is specific to a particular controller, you should put it in the corresponding helper file; for example, helpers for the StaticPages controller generally go in <code>app/helpers/static_pages_helper.rb</code>.<span class="intersentencespace"></span> In our case, we expect the <code>full_title</code> helper to be used on all the site’s pages, and Rails has a special helper file for this case: <code>app/helpers/application_helper.rb</code>.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-1">↑</a></li>
+    <li id="_cha-4_footnote-2">For more on the origins of “foo” and “bar”—and, in particular, the possible <em>non</em>-relation of “foobar” to “FUBAR”—see the <a href="http://www.catb.org/jargon/html/F/foo.html">Jargon File entry on “foo”</a>.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-2">↑</a></li>
+    <li id="_cha-4_footnote-3">Programmers familiar with Perl or PHP should compare this to the automatic interpolation of dollar sign variables in expressions like <code>"foo $bar"</code>.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-3">↑</a></li>
+    <li id="_cha-4_footnote-4">Apologies in advance for switching haphazardly between <em>function</em> and <em>method</em> throughout this chapter; in Ruby, they’re the same thing: all methods are functions, and all functions are methods, because everything is an object.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-4">↑</a></li>
+    <li id="_cha-4_footnote-5">Well, there will still be <em>one</em> thing left that we don’t understand, which is how Rails ties this all together: mapping URLs to actions, making the <code>full_title</code> helper available in views, etc.<span class="intersentencespace"></span> This is an interesting subject, and I encourage you to investigate it further, but knowing exactly <em>how</em> Rails works is not necessary when <em>using</em> Rails.<span class="intersentencespace"></span> (For a deeper understanding, I recommend <em>The Rails&nbsp;4 Way</em> by Obie Fernandez.)&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-5">↑</a></li>
+    <li id="_cha-4_footnote-6">The <code>second</code> method used here isn’t currently part of Ruby itself, but rather is added by Rails.<span class="intersentencespace"></span> It works in this case because the Rails console automatically includes the Rails extensions to Ruby.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-6">↑</a></li>
+    <li id="_cha-4_footnote-7">Programming experts, on the other hand, might benefit from knowing that blocks are <em>closures</em>, which are one-shot anonymous functions with data attached.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-7">↑</a></li>
+    <li id="_cha-4_footnote-8">Ruby 1.9 actually guarantees that hashes keep their elements in the same order entered, but it would be unwise ever to count on a particular ordering.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-8">↑</a></li>
+    <li id="_cha-4_footnote-9">As a result of having less baggage, symbols are easier to compare to each other; strings need to be compared character by character, while symbols can be compared all in one go.<span class="intersentencespace"></span> This makes them ideal for use as hash keys.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-9">↑</a></li>
+    <li id="_cha-4_footnote-10">There’s actually a subtle difference, which is that <code>p</code> returns the object being printed while <code>puts</code> always returns <code>nil</code>.<span class="intersentencespace"></span> Thanks to reader Katarzyna Siwek for pointing this out.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-10">↑</a></li>
+    <li id="_cha-4_footnote-11">A newline is what comes at the end of a line, thereby starting a new line.<span class="intersentencespace"></span> In code, it is represented by the character <span class="inline_verbatim">\n</span>.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-11">↑</a></li>
+    <li id="_cha-4_footnote-12">Actually <em>counting</em> columns could drive you crazy, which is why many text editors have a visual aid to help you.<span class="intersentencespace"></span> For example, if you take a look back at <a href="http://www.railstutorial.org/book/beginning#fig-editor_shell" class="hyperref">Figure&nbsp;<span class="ref">1.1</span></a>, you’ll see a small vertical line on the right to help keep code under 80 characters.<span class="intersentencespace"></span> (It’s actually at 78 columns, which gives you a little margin for error.)<span class="intersentencespace"></span> If you use TextMate, you can find this feature under <span class="tt">View &gt; Wrap Column &gt; 78</span>.<span class="intersentencespace"></span> In Sublime Text, you can use <span class="tt">View &gt; Ruler &gt; 78</span> or <span class="tt">View &gt; Ruler &gt; 80</span>.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-12">↑</a></li>
+    <li id="_cha-4_footnote-13">These results will vary based on the version of Ruby you are using.<span class="intersentencespace"></span> This example assumes you are using Ruby&nbsp;1.9.3.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-13">↑</a></li>
+    <li id="_cha-4_footnote-14">For more on Ruby classes and the <code>self</code> keyword, see the <a href="http://railstips.org/">RailsTips</a> post “<a href="http://railstips.org/blog/archives/2006/11/18/class-and-instance-variables-in-ruby/">Class and Instance Variables in Ruby</a>”.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-14">↑</a></li>
+    <li id="_cha-4_footnote-15">For those familiar with JavaScript, this functionality is comparable to using a built-in class prototype object to augment the class.<span class="intersentencespace"></span> (Thanks to reader <a href="http://getsatisfaction.com/railstutorial/topics/adding_methods_to_built_in_classes_comparable_to_using_javascripts_prototype_object">Erik Eldridge</a> for pointing this out.)&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-15">↑</a></li>
+    <li id="_cha-4_footnote-16">You don’t have to know what each class in this hierarchy does.<span class="intersentencespace"></span> <em>I</em> don’t know what they all do, and I’ve been programming in Ruby on Rails since 2005.<span class="intersentencespace"></span> This means either that (a) I’m grossly incompetent or (b) you can be a skilled Rails developer without knowing all its innards.<span class="intersentencespace"></span> I hope for both our sakes that it’s the latter.&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-16">↑</a></li>
+    <li id="_cha-4_footnote-17">http://rubykoans.com/&nbsp;<a class="arrow" href="http://www.railstutorial.org/book/rails_flavored_ruby#cha-4_footnote-ref-17">↑</a></li>
+  </ol></div></div></div>
+<div id="bookBottomMenu">
+<div class="bookMenuArows">
+<a href="javascript://" class="leftArrow">◄</a>
+<a href="javascript://" class="upArrow">▲</a>
+<a href="javascript://" class="rightArrow">►</a>
+</div>
+</div>
+</div>
+<div id="bookContentNotAvailable">
+<img alt="Empty_content" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/empty_content-ccbfa2e7e03ec571f0360d9bdd87eff3.png">
+Sorry, content not available
+</div>
+</div>
+<div class="emailPitch" id="bookEmailModal">
+<a href="javascript://" class="emailSignupClose" onclick="closeEmailPops()">x</a>
+<strong>STAY UP TO DATE!</strong>
+<p>Joining the email list for this book will allow the author to contact you to let you know about special offers and when updates for the book are available.</p>
+<div class="j_followBookForm"><form accept-charset="UTF-8" action="http://www.softcover.io/follow/28fdb94f/ruby_on_rails_tutorial" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+<input name="email" placeholder="YOUR EMAIL ADDRESS" type="text">
+<input class="greyButton optClick_follow" type="submit" value="Follow Book">
+</form>
+
+</div>
+</div>
+<script>
+  // setup book nav
+  Book.init({
+    title: "Ruby on Rails Tutorial",
+    path: "/book",
+    slug: "ruby_on_rails_tutorial",
+    s3_path_prefix: "636/ruby_on_rails_tutorial",
+    chapters: [{"title":"Frontmatter\n","number":0,"slug":"frontmatter","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/frontmatter_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=LYC29Y%2B2fYRGB8rbEqOM7jbe6eQ%3D&Expires=1409428246"},{"title":"Chapter 1: From zero to deploy\n","number":1,"slug":"beginning","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/beginning_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=RQIXWHEOt8vsD9WLmFEzQQN3nQQ%3D&Expires=1409428246"},{"title":"Chapter 2: A demo app\n","number":2,"slug":"demo_app","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/demo_app_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=wuCFnmrGHb2rVmawLkRRW385B8s%3D&Expires=1409428246"},{"title":"Chapter 3: Mostly static pages\n","number":3,"slug":"static_pages","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/static_pages_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=BBuiU0z%2BEKHFObTP%2Be1yg12ANdM%3D&Expires=1409428246"},{"title":"Chapter 4: Rails-flavored Ruby\n","number":4,"slug":"rails_flavored_ruby","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/rails_flavored_ruby_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=lOrf2VrfRBplPfVRt0yXMDo/ijU%3D&Expires=1409428246"},{"title":"Chapter 5: Filling in the layout\n","number":5,"slug":"filling_in_the_layout","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/filling_in_the_layout_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=YiBDaoiI%2BOktc/GGXLeiTLBqdn4%3D&Expires=1409428246"},{"title":"Chapter 6: Modeling users\n","number":6,"slug":"modeling_users","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/modeling_users_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=ngiWJy3dedK/NJS6r/MwMN5U%2BKM%3D&Expires=1409428246"},{"title":"Chapter 7: Sign up\n","number":7,"slug":"sign_up","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/sign_up_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=Kh8ROtGRlHtSPpkAVjKoGgwTwxQ%3D&Expires=1409428246"},{"title":"Chapter 8: Sign in, sign out\n","number":8,"slug":"sign_in_out","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/sign_in_out_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=xYsU5qb61UAqUxh52KT4r267lk8%3D&Expires=1409428246"},{"title":"Chapter 9: Updating, showing, and deleting users\n","number":9,"slug":"updating_and_deleting_users","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/updating_and_deleting_users_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=TDW9z9F/vCWXEecqLc732dcAFjM%3D&Expires=1409428246"},{"title":"Chapter 10: User microposts\n","number":10,"slug":"user_microposts","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/user_microposts_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=YIpeBtmdeVm9HLH/DGJlmi3sSSY%3D&Expires=1409428246"},{"title":"Chapter 11: Following users\n","number":11,"slug":"following_users","s3_url":"https://softcover.s3.amazonaws.com/636/ruby_on_rails_tutorial/html/following_users_fragment.html?AWSAccessKeyId=AKIAJMNNDDBSYVXVHGAA&Signature=Ghx5Y/Y3kRhMHFpR%2Bmj2sJLG4kk%3D&Expires=1409428246"}],
+    full_page: false
+  });
+</script>
+
+</div>
+</div>
+<div class="footer clearfix">
+<div class="wrapper" id="hide_chromeFooter">
+<em>powered by</em>
+<a href="http://www.softcover.io/" class="logo"><img alt="Logo_foot" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/logo_foot-39da4a3be1566a91864f2712656b404e.png">
+</a></div>
+</div>
+
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0023/6713.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<script type="text/javascript">
+  var _sf_async_config = { uid: 9895, domain: 'softcover.io', useCanonical: true };
+  (function() {
+    function loadChartbeat() {
+      window._sf_endpt = (new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+      document.body.appendChild(e);
+    };
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script>
+
+
+
+<script src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/nr-411.min.js"></script><script language="javascript" type="text/javascript" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/chartbeat.js"></script><script type="text/javascript" src="./Chapter 4  Rails-flavored Ruby   Ruby on Rails Tutorial   Softcover.io_files/1310fd97f1"></script></body></html>
